@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Game
 {
-    public partial class StartScreen : Form
+    public partial class Form1 : Form
     {
-        public StartScreen()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void startButton_Click(object sender, EventArgs e)
-        {
-            PlayerChoiceScreen gameWindow = new PlayerChoiceScreen();
-
-            gameWindow.Show();
         }
     }
 }
