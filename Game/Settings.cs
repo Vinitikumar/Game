@@ -21,13 +21,13 @@ namespace Game
         public static int Score { get; set; } 
         public static int Points { get; set; } 
         public static bool GameOver { get; set; } 
-        public static Directions direction { get; set; } 
+        public static Directions direction { get; set; }
 
         public Settings()
         {
             Width = 16; 
             Height = 16; 
-            Speed = 20; 
+            Speed = 10; 
             Score = 0; 
             Points = 100; 
             GameOver = false; 

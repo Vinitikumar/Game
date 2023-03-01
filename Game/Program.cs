@@ -16,7 +16,7 @@ namespace Game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartPages());
+            Application.Run(new MainGamePage());
         }
     }
 }
