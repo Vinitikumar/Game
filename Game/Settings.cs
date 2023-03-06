@@ -28,7 +28,7 @@ namespace Game
             Width = 16; 
             Height = 16; 
             Speed = 10; 
-            Score = 0; 
+            Score = 00; 
             Points = 100; 
             GameOver = false; 
             direction = Directions.Down; 

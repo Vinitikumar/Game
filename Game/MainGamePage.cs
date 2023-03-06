@@ -14,7 +14,6 @@ namespace Game
     public partial class MainGamePage : Form
     {
         private List<Circle> Snake = new List<Circle>();
-        private List<Circle> Snake2 = new List<Circle>();
         private Circle food = new Circle();
         Boolean started = false;
         int currentKeyPressedMainGamePage = -1;
@@ -73,30 +72,7 @@ namespace Game
                                             Settings.Width, Settings.Height
                                             ));
                 }
-                for (int i = 1; i < Snake2.Count; i++)
-                {
-                    if (i == 1)
-                    {
-                        snakeColour = Brushes.Blue;
-                    }
-                    else
-                    {
-                        snakeColour = Brushes.BlueViolet;
-                    }
-                    canvas.FillEllipse(snakeColour,
-                                        new Rectangle(
-                                            Snake2[i].X * Settings.Width,
-                                            Snake2[i].Y * Settings.Height,
-                                            Settings.Width, Settings.Height
-                                            ));
-
-                    canvas.FillEllipse(Brushes.GreenYellow,
-                                        new Rectangle(
-                                            food.X * Settings.Width,
-                                            food.Y * Settings.Height,
-                                            Settings.Width, Settings.Height
-                                            ));
-                }
+               
             }
             else
             {
@@ -113,12 +89,10 @@ namespace Game
             label3.Visible = false;
             new Settings();
             Snake.Clear();
-            Snake2.Clear();
             Circle head = new Circle { X = 10, Y = 5 };
             Snake.Add(head);
-            Snake2.Add(head);
 
-            label3.Text = Settings.Score.ToString();
+            ScoreCount.Text = Settings.Score.ToString();
 
             generateFood();
         }
@@ -179,61 +153,7 @@ namespace Game
             }
         }
 
-        private void movePlayer2()
-        {
-            for (int i = Snake2.Count - 1; i >= 0; i--)
-            {
-                if (i == 0)
-                {
-                    switch (Settings.direction)
-                    {
-                        case Directions.Right:
-                            Snake2[i].X++;
-                            break;
-                        case Directions.Left:
-                            Snake2[i].X--;
-                            break;
-                        case Directions.Up:
-                            Snake2[i].Y--;
-                            break;
-                        case Directions.Down:
-                            Snake2[i].Y++;
-                            break;
-                    }
-
-                    int maxXpos = pbCanvas.Size.Width / Settings.Width;
-                    int maxYpos = pbCanvas.Size.Height / Settings.Height;
-
-                    if (
-                        Snake2[i].X < 0 || Snake2[i].Y < 0 ||
-                        Snake2[i].X > maxXpos || Snake2[i].Y > maxYpos
-                        )
-                    {
-
-                        die();
-                    }
-
-                    for (int j = 1; j < Snake2.Count; j++)
-                    {
-                        if (Snake2[i].X == Snake2[j].X && Snake2[i].Y == Snake2[j].Y)
-                        {
-                            die();
-                        }
-                    }
-
-                    if (Snake2[0].X == food.X && Snake2[0].Y == food.Y)
-                    {
-                        eat();
-                    }
-
-                }
-                else
-                {
-                    Snake2[i].X = Snake2[i - 1].X;
-                    Snake2[i].Y = Snake2[i - 1].Y;
-                }
-            }
-        }
+       
 
         private void generateFood()
         {
@@ -250,18 +170,12 @@ namespace Game
                 Y = Snake[Snake.Count - 1].Y
 
             };
-            Circle body2 = new Circle
-            {
-                X = Snake[Snake.Count - 1].X,
-                Y = Snake[Snake.Count - 1].Y
-
-            };
 
             Snake.Add(body);
-            Snake.Add(body2);
+
             Settings.Speed++;
             Settings.Score += Settings.Points;
-            label3.Text = Settings.Score.ToString();
+            ScoreCount.Text = Settings.Score.ToString();
             generateFood();
         }
         private void die()
@@ -274,7 +188,7 @@ namespace Game
             if (Settings.GameOver == true)
             {
 
-                if (Input.KeyPress(Keys.Enter))
+                if (currentKeyPressedMainGamePage == (int)Keys.Enter)
                 {
                     startGame();
                 }
@@ -304,43 +218,6 @@ namespace Game
             pbCanvas.Invalidate();
         }
 
-        private void updateScreen2(object sender, EventArgs e)
-        {
-
-            if (Settings.GameOver == true)
-            {
-
-                if (Input.KeyPress(Keys.Enter))
-                {
-                    startGame();
-                }
-            }
-            else
-            {
-
-                if (Input.KeyPress(Keys.D) && Settings.direction != Directions.Left)
-                {
-                    Settings.direction = Directions.Right;
-                }
-                else if (Input.KeyPress(Keys.A) && Settings.direction != Directions.Right)
-                {
-                    Settings.direction = Directions.Left;
-                }
-                else if (Input.KeyPress(Keys.W) && Settings.direction != Directions.Down)
-                {
-                    Settings.direction = Directions.Up;
-                }
-                else if (Input.KeyPress(Keys.S) && Settings.direction != Directions.Up)
-                {
-                    Settings.direction = Directions.Down;
-                }
-
-                movePlayer2();
-
-            }
-            pbCanvas.Invalidate();
-
-        }
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -386,6 +263,11 @@ namespace Game
             }
 
             e.Handled = true;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
