@@ -33,13 +33,17 @@
             this.tabController = new System.Windows.Forms.TabControl();
             this.StartPage = new System.Windows.Forms.TabPage();
             this.startButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.GameTitle = new System.Windows.Forms.Label();
             this.MainGame = new System.Windows.Forms.TabPage();
+            this.ScoreCount = new System.Windows.Forms.Label();
             this.ScoreLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.GameOverText = new System.Windows.Forms.Label();
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.ScoreCount = new System.Windows.Forms.Label();
+            this.RestartGameText = new System.Windows.Forms.Label();
+            this.FinalScoreText = new System.Windows.Forms.Label();
+            this.ScoreCount2 = new System.Windows.Forms.Label();
+            this.ScoreLabel2 = new System.Windows.Forms.Label();
             this.tabController.SuspendLayout();
             this.StartPage.SuspendLayout();
             this.MainGame.SuspendLayout();
@@ -63,7 +67,7 @@
             // 
             this.StartPage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StartPage.BackgroundImage")));
             this.StartPage.Controls.Add(this.startButton);
-            this.StartPage.Controls.Add(this.label1);
+            this.StartPage.Controls.Add(this.GameTitle);
             this.StartPage.Location = new System.Drawing.Point(4, 25);
             this.StartPage.Margin = new System.Windows.Forms.Padding(4);
             this.StartPage.Name = "StartPage";
@@ -90,58 +94,74 @@
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click_1);
             // 
-            // label1
+            // GameTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(709, 186);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 111);
-            this.label1.TabIndex = 3;
-            this.label1.Text = ".NOM";
+            this.GameTitle.AutoSize = true;
+            this.GameTitle.BackColor = System.Drawing.Color.Transparent;
+            this.GameTitle.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.GameTitle.Location = new System.Drawing.Point(709, 186);
+            this.GameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GameTitle.Name = "GameTitle";
+            this.GameTitle.Size = new System.Drawing.Size(282, 111);
+            this.GameTitle.TabIndex = 3;
+            this.GameTitle.Text = ".NOM";
             // 
             // MainGame
             // 
             this.MainGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainGame.BackgroundImage")));
+            this.MainGame.Controls.Add(this.ScoreCount2);
+            this.MainGame.Controls.Add(this.ScoreLabel2);
+            this.MainGame.Controls.Add(this.FinalScoreText);
+            this.MainGame.Controls.Add(this.RestartGameText);
             this.MainGame.Controls.Add(this.ScoreCount);
             this.MainGame.Controls.Add(this.ScoreLabel);
-            this.MainGame.Controls.Add(this.label3);
+            this.MainGame.Controls.Add(this.GameOverText);
             this.MainGame.Controls.Add(this.pbCanvas);
             this.MainGame.Location = new System.Drawing.Point(4, 25);
             this.MainGame.Name = "MainGame";
-            this.MainGame.Size = new System.Drawing.Size(1763, 802);
+            this.MainGame.Size = new System.Drawing.Size(2196, 974);
             this.MainGame.TabIndex = 2;
             this.MainGame.Text = "MainGame";
             this.MainGame.UseVisualStyleBackColor = true;
             this.MainGame.Click += new System.EventHandler(this.MainGame_Click);
+            // 
+            // ScoreCount
+            // 
+            this.ScoreCount.AutoSize = true;
+            this.ScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreCount.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ScoreCount.Location = new System.Drawing.Point(485, 72);
+            this.ScoreCount.Name = "ScoreCount";
+            this.ScoreCount.Size = new System.Drawing.Size(46, 32);
+            this.ScoreCount.TabIndex = 10;
+            this.ScoreCount.Text = "00";
             // 
             // ScoreLabel
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ScoreLabel.Location = new System.Drawing.Point(742, 66);
+            this.ScoreLabel.Location = new System.Drawing.Point(356, 68);
             this.ScoreLabel.Name = "ScoreLabel";
             this.ScoreLabel.Size = new System.Drawing.Size(101, 36);
             this.ScoreLabel.TabIndex = 9;
             this.ScoreLabel.Text = "Score:";
             this.ScoreLabel.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // GameOverText
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(714, 689);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 34);
-            this.label3.TabIndex = 8;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            this.label3.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
+            this.GameOverText.AutoSize = true;
+            this.GameOverText.BackColor = System.Drawing.Color.Transparent;
+            this.GameOverText.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameOverText.ForeColor = System.Drawing.Color.Red;
+            this.GameOverText.Location = new System.Drawing.Point(843, 309);
+            this.GameOverText.Name = "GameOverText";
+            this.GameOverText.Size = new System.Drawing.Size(0, 34);
+            this.GameOverText.TabIndex = 8;
+            this.GameOverText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.GameOverText.Click += new System.EventHandler(this.label3_Click);
+            this.GameOverText.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
             // pbCanvas
             // 
@@ -156,16 +176,50 @@
             this.pbCanvas.Click += new System.EventHandler(this.pbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
-            // ScoreCount
+            // RestartGameText
             // 
-            this.ScoreCount.AutoSize = true;
-            this.ScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreCount.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ScoreCount.Location = new System.Drawing.Point(880, 69);
-            this.ScoreCount.Name = "ScoreCount";
-            this.ScoreCount.Size = new System.Drawing.Size(58, 40);
-            this.ScoreCount.TabIndex = 10;
-            this.ScoreCount.Text = "00";
+            this.RestartGameText.AutoSize = true;
+            this.RestartGameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestartGameText.ForeColor = System.Drawing.Color.Red;
+            this.RestartGameText.Location = new System.Drawing.Point(843, 710);
+            this.RestartGameText.Name = "RestartGameText";
+            this.RestartGameText.Size = new System.Drawing.Size(0, 32);
+            this.RestartGameText.TabIndex = 11;
+            this.RestartGameText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // FinalScoreText
+            // 
+            this.FinalScoreText.AutoSize = true;
+            this.FinalScoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinalScoreText.ForeColor = System.Drawing.Color.LimeGreen;
+            this.FinalScoreText.Location = new System.Drawing.Point(844, 494);
+            this.FinalScoreText.Name = "FinalScoreText";
+            this.FinalScoreText.Size = new System.Drawing.Size(0, 29);
+            this.FinalScoreText.TabIndex = 12;
+            this.FinalScoreText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FinalScoreText.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // ScoreCount2
+            // 
+            this.ScoreCount2.AutoSize = true;
+            this.ScoreCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreCount2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ScoreCount2.Location = new System.Drawing.Point(1230, 73);
+            this.ScoreCount2.Name = "ScoreCount2";
+            this.ScoreCount2.Size = new System.Drawing.Size(46, 32);
+            this.ScoreCount2.TabIndex = 14;
+            this.ScoreCount2.Text = "00";
+            // 
+            // ScoreLabel2
+            // 
+            this.ScoreLabel2.AutoSize = true;
+            this.ScoreLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ScoreLabel2.Location = new System.Drawing.Point(1101, 69);
+            this.ScoreLabel2.Name = "ScoreLabel2";
+            this.ScoreLabel2.Size = new System.Drawing.Size(101, 36);
+            this.ScoreLabel2.TabIndex = 13;
+            this.ScoreLabel2.Text = "Score:";
             // 
             // MainGamePage
             // 
@@ -192,12 +246,16 @@
         private System.Windows.Forms.TabControl tabController;
         private System.Windows.Forms.TabPage StartPage;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label GameTitle;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.TabPage MainGame;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label GameOverText;
         private System.Windows.Forms.PictureBox pbCanvas;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.Label ScoreCount;
+        private System.Windows.Forms.Label RestartGameText;
+        private System.Windows.Forms.Label FinalScoreText;
+        private System.Windows.Forms.Label ScoreCount2;
+        private System.Windows.Forms.Label ScoreLabel2;
     }
 }
