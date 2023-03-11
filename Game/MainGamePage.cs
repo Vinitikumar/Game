@@ -15,6 +15,7 @@ namespace Game
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
+
         Boolean started = false;
         int currentKeyPressedMainGamePage = -1;
 
@@ -72,27 +73,36 @@ namespace Game
                                             Settings.Width, Settings.Height
                                             ));
                 }
-               
+
             }
             else
             {
 
-                string gameOver = "Game Over! " + "Final Score is " + Settings.Score + "\n Press enter to Restart \n";
-                label3.Text = gameOver;
-                label3.Visible = true;
+                string gameOver = "Game Over!"; 
+                string finalScore = "Final Score" + "\nPlayer1: " + Settings.Player1Score + "\nPlayer2: " + Settings.Player2Score;
+                string restartGame = "Press enter to Restart";
+                GameOverText.Text = gameOver;
+                RestartGameText.Text = restartGame;
+                FinalScoreText.Text = finalScore;
+                GameOverText.Visible = true;
+                RestartGameText.Visible = true;
+                FinalScoreText.Visible = true;
             }
         }
 
 
         private void startGame()
         {
-            label3.Visible = false;
+            GameOverText.Visible = false;
+            RestartGameText.Visible = false;
+            FinalScoreText.Visible = false;
             new Settings();
             Snake.Clear();
             Circle head = new Circle { X = 10, Y = 5 };
             Snake.Add(head);
 
-            ScoreCount.Text = Settings.Score.ToString();
+            ScoreCount.Text = Settings.Player1Score.ToString();
+            ScoreCount2.Text = Settings.Player2Score.ToString();
 
             generateFood();
         }
@@ -152,9 +162,6 @@ namespace Game
                 }
             }
         }
-
-       
-
         private void generateFood()
         {
             int maxXpos = pbCanvas.Size.Width / Settings.Width;
@@ -162,6 +169,7 @@ namespace Game
             Random rnd = new Random();
             food = new Circle { X = rnd.Next(0, maxXpos), Y = rnd.Next(0, maxYpos) };
         }
+
         private void eat()
         {
             Circle body = new Circle
@@ -174,8 +182,8 @@ namespace Game
             Snake.Add(body);
 
             Settings.Speed++;
-            Settings.Score += Settings.Points;
-            ScoreCount.Text = Settings.Score.ToString();
+            Settings.Player1Score += Settings.Points;
+            ScoreCount.Text = Settings.Player1Score.ToString();
             generateFood();
         }
         private void die()
@@ -217,7 +225,6 @@ namespace Game
 
             pbCanvas.Invalidate();
         }
-
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -266,6 +273,11 @@ namespace Game
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
