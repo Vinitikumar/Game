@@ -154,7 +154,7 @@ namespace Game
 
             Snake.Clear();
             Snake2.Clear();
-            Circle head = new Circle { X = 10, Y = 5 };
+            Circle head = new Circle { X = 35, Y = 5 };
             Circle head2 = new Circle { X = 10, Y = 5 };
             Snake.Add(head);
             Snake2.Add(head2);
