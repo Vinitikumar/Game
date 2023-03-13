@@ -23,6 +23,7 @@ namespace Game
         public static int Points { get; set; } 
         public static bool GameOver { get; set; } 
         public static Directions direction { get; set; }
+        public static Directions direction2 { get; set; }
 
         public Settings()
         {
@@ -33,7 +34,8 @@ namespace Game
             Player2Score = 00;
             Points = 100; 
             GameOver = false; 
-            direction = Directions.Down; 
+            direction = Directions.Down;
+            direction2 = Directions.Down;
         }
     }
 }
