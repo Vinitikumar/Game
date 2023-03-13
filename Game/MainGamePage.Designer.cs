@@ -35,24 +35,30 @@
             this.startButton = new System.Windows.Forms.Button();
             this.GameTitle = new System.Windows.Forms.Label();
             this.MainGame = new System.Windows.Forms.TabPage();
+            this.ScoreCount2 = new System.Windows.Forms.Label();
+            this.ScoreLabel2 = new System.Windows.Forms.Label();
+            this.FinalScoreText = new System.Windows.Forms.Label();
+            this.RestartGameText = new System.Windows.Forms.Label();
             this.ScoreCount = new System.Windows.Forms.Label();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.GameOverText = new System.Windows.Forms.Label();
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.RestartGameText = new System.Windows.Forms.Label();
-            this.FinalScoreText = new System.Windows.Forms.Label();
-            this.ScoreCount2 = new System.Windows.Forms.Label();
-            this.ScoreLabel2 = new System.Windows.Forms.Label();
+            this.PlayerChoicePage = new System.Windows.Forms.TabPage();
+            this.SinglePlayerButton = new System.Windows.Forms.Button();
+            this.PlayerChoices = new System.Windows.Forms.Label();
+            this.MultiplayerButton = new System.Windows.Forms.Button();
             this.tabController.SuspendLayout();
             this.StartPage.SuspendLayout();
             this.MainGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
+            this.PlayerChoicePage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabController
             // 
             this.tabController.Controls.Add(this.StartPage);
+            this.tabController.Controls.Add(this.PlayerChoicePage);
             this.tabController.Controls.Add(this.MainGame);
             this.tabController.Location = new System.Drawing.Point(-15, -63);
             this.tabController.Margin = new System.Windows.Forms.Padding(4);
@@ -126,6 +132,51 @@
             this.MainGame.UseVisualStyleBackColor = true;
             this.MainGame.Click += new System.EventHandler(this.MainGame_Click);
             // 
+            // ScoreCount2
+            // 
+            this.ScoreCount2.AutoSize = true;
+            this.ScoreCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreCount2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ScoreCount2.Location = new System.Drawing.Point(1230, 73);
+            this.ScoreCount2.Name = "ScoreCount2";
+            this.ScoreCount2.Size = new System.Drawing.Size(46, 32);
+            this.ScoreCount2.TabIndex = 14;
+            this.ScoreCount2.Text = "00";
+            // 
+            // ScoreLabel2
+            // 
+            this.ScoreLabel2.AutoSize = true;
+            this.ScoreLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ScoreLabel2.Location = new System.Drawing.Point(1101, 69);
+            this.ScoreLabel2.Name = "ScoreLabel2";
+            this.ScoreLabel2.Size = new System.Drawing.Size(101, 36);
+            this.ScoreLabel2.TabIndex = 13;
+            this.ScoreLabel2.Text = "Score:";
+            // 
+            // FinalScoreText
+            // 
+            this.FinalScoreText.AutoSize = true;
+            this.FinalScoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinalScoreText.ForeColor = System.Drawing.Color.LimeGreen;
+            this.FinalScoreText.Location = new System.Drawing.Point(844, 494);
+            this.FinalScoreText.Name = "FinalScoreText";
+            this.FinalScoreText.Size = new System.Drawing.Size(0, 29);
+            this.FinalScoreText.TabIndex = 12;
+            this.FinalScoreText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FinalScoreText.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // RestartGameText
+            // 
+            this.RestartGameText.AutoSize = true;
+            this.RestartGameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestartGameText.ForeColor = System.Drawing.Color.Red;
+            this.RestartGameText.Location = new System.Drawing.Point(843, 710);
+            this.RestartGameText.Name = "RestartGameText";
+            this.RestartGameText.Size = new System.Drawing.Size(0, 32);
+            this.RestartGameText.TabIndex = 11;
+            this.RestartGameText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // ScoreCount
             // 
             this.ScoreCount.AutoSize = true;
@@ -176,50 +227,62 @@
             this.pbCanvas.Click += new System.EventHandler(this.pbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
-            // RestartGameText
+            // PlayerChoicePage
             // 
-            this.RestartGameText.AutoSize = true;
-            this.RestartGameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RestartGameText.ForeColor = System.Drawing.Color.Red;
-            this.RestartGameText.Location = new System.Drawing.Point(843, 710);
-            this.RestartGameText.Name = "RestartGameText";
-            this.RestartGameText.Size = new System.Drawing.Size(0, 32);
-            this.RestartGameText.TabIndex = 11;
-            this.RestartGameText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PlayerChoicePage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PlayerChoicePage.BackgroundImage")));
+            this.PlayerChoicePage.Controls.Add(this.MultiplayerButton);
+            this.PlayerChoicePage.Controls.Add(this.SinglePlayerButton);
+            this.PlayerChoicePage.Controls.Add(this.PlayerChoices);
+            this.PlayerChoicePage.Location = new System.Drawing.Point(4, 25);
+            this.PlayerChoicePage.Name = "PlayerChoicePage";
+            this.PlayerChoicePage.Size = new System.Drawing.Size(2196, 974);
+            this.PlayerChoicePage.TabIndex = 3;
+            this.PlayerChoicePage.Text = "PlayerChoicePage";
+            this.PlayerChoicePage.UseVisualStyleBackColor = true;
             // 
-            // FinalScoreText
+            // SinglePlayerButton
             // 
-            this.FinalScoreText.AutoSize = true;
-            this.FinalScoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FinalScoreText.ForeColor = System.Drawing.Color.LimeGreen;
-            this.FinalScoreText.Location = new System.Drawing.Point(844, 494);
-            this.FinalScoreText.Name = "FinalScoreText";
-            this.FinalScoreText.Size = new System.Drawing.Size(0, 29);
-            this.FinalScoreText.TabIndex = 12;
-            this.FinalScoreText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.FinalScoreText.Click += new System.EventHandler(this.label1_Click);
+            this.SinglePlayerButton.BackColor = System.Drawing.Color.Transparent;
+            this.SinglePlayerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SinglePlayerButton.BackgroundImage")));
+            this.SinglePlayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SinglePlayerButton.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SinglePlayerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SinglePlayerButton.Location = new System.Drawing.Point(687, 280);
+            this.SinglePlayerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SinglePlayerButton.Name = "SinglePlayerButton";
+            this.SinglePlayerButton.Size = new System.Drawing.Size(408, 103);
+            this.SinglePlayerButton.TabIndex = 6;
+            this.SinglePlayerButton.Text = "Singleplayer";
+            this.SinglePlayerButton.UseVisualStyleBackColor = false;
             // 
-            // ScoreCount2
+            // PlayerChoices
             // 
-            this.ScoreCount2.AutoSize = true;
-            this.ScoreCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreCount2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ScoreCount2.Location = new System.Drawing.Point(1230, 73);
-            this.ScoreCount2.Name = "ScoreCount2";
-            this.ScoreCount2.Size = new System.Drawing.Size(46, 32);
-            this.ScoreCount2.TabIndex = 14;
-            this.ScoreCount2.Text = "00";
+            this.PlayerChoices.AutoSize = true;
+            this.PlayerChoices.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerChoices.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerChoices.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PlayerChoices.Location = new System.Drawing.Point(601, 77);
+            this.PlayerChoices.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PlayerChoices.Name = "PlayerChoices";
+            this.PlayerChoices.Size = new System.Drawing.Size(602, 111);
+            this.PlayerChoices.TabIndex = 5;
+            this.PlayerChoices.Text = "Player Choices";
             // 
-            // ScoreLabel2
+            // MultiplayerButton
             // 
-            this.ScoreLabel2.AutoSize = true;
-            this.ScoreLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ScoreLabel2.Location = new System.Drawing.Point(1101, 69);
-            this.ScoreLabel2.Name = "ScoreLabel2";
-            this.ScoreLabel2.Size = new System.Drawing.Size(101, 36);
-            this.ScoreLabel2.TabIndex = 13;
-            this.ScoreLabel2.Text = "Score:";
+            this.MultiplayerButton.BackColor = System.Drawing.Color.Transparent;
+            this.MultiplayerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultiplayerButton.BackgroundImage")));
+            this.MultiplayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MultiplayerButton.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MultiplayerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.MultiplayerButton.Location = new System.Drawing.Point(687, 437);
+            this.MultiplayerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MultiplayerButton.Name = "MultiplayerButton";
+            this.MultiplayerButton.Size = new System.Drawing.Size(408, 103);
+            this.MultiplayerButton.TabIndex = 7;
+            this.MultiplayerButton.Text = "Multiplayer";
+            this.MultiplayerButton.UseVisualStyleBackColor = false;
+            this.MultiplayerButton.Click += new System.EventHandler(this.MultiplayerButton_Click);
             // 
             // MainGamePage
             // 
@@ -237,6 +300,8 @@
             this.MainGame.ResumeLayout(false);
             this.MainGame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
+            this.PlayerChoicePage.ResumeLayout(false);
+            this.PlayerChoicePage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +322,9 @@
         private System.Windows.Forms.Label FinalScoreText;
         private System.Windows.Forms.Label ScoreCount2;
         private System.Windows.Forms.Label ScoreLabel2;
+        private System.Windows.Forms.TabPage PlayerChoicePage;
+        private System.Windows.Forms.Button MultiplayerButton;
+        private System.Windows.Forms.Button SinglePlayerButton;
+        private System.Windows.Forms.Label PlayerChoices;
     }
 }
