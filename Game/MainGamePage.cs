@@ -244,7 +244,7 @@ namespace Game
             {
                 if (i == 0)
                 {
-                    switch (Settings.direction)
+                    switch (Settings.direction2)
                     {
                         case Directions.Right:
                             Snake2[i].X++;
@@ -425,19 +425,19 @@ namespace Game
             {
                 if (currentKeyPressedMainGamePage == (int)Keys.D)
                 {
-                    Settings.direction = Directions.Right;
+                    Settings.direction2 = Directions.Right;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.A)
                 {
-                    Settings.direction = Directions.Left;
+                    Settings.direction2 = Directions.Left;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.W)
                 {
-                    Settings.direction = Directions.Up;
+                    Settings.direction2 = Directions.Up;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.S)
                 {
-                    Settings.direction = Directions.Down;
+                    Settings.direction2 = Directions.Down;
                 }
 
 
