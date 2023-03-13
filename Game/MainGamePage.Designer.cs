@@ -34,7 +34,12 @@
             this.StartPage = new System.Windows.Forms.TabPage();
             this.startButton = new System.Windows.Forms.Button();
             this.GameTitle = new System.Windows.Forms.Label();
-            this.MainGame = new System.Windows.Forms.TabPage();
+            this.PlayerChoicePage = new System.Windows.Forms.TabPage();
+            this.MultiplayerButton = new System.Windows.Forms.Button();
+            this.SinglePlayerButton = new System.Windows.Forms.Button();
+            this.PlayerChoices = new System.Windows.Forms.Label();
+            this.SingleplayerGame = new System.Windows.Forms.TabPage();
+            this.MultiplayerGame = new System.Windows.Forms.TabPage();
             this.ScoreCount2 = new System.Windows.Forms.Label();
             this.ScoreLabel2 = new System.Windows.Forms.Label();
             this.FinalScoreText = new System.Windows.Forms.Label();
@@ -44,22 +49,24 @@
             this.GameOverText = new System.Windows.Forms.Label();
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.PlayerChoicePage = new System.Windows.Forms.TabPage();
-            this.SinglePlayerButton = new System.Windows.Forms.Button();
-            this.PlayerChoices = new System.Windows.Forms.Label();
-            this.MultiplayerButton = new System.Windows.Forms.Button();
+            this.pbCanvasS = new System.Windows.Forms.PictureBox();
+            this.ScoreForSingleP = new System.Windows.Forms.Label();
+            this.ScoreLabel3 = new System.Windows.Forms.Label();
             this.tabController.SuspendLayout();
             this.StartPage.SuspendLayout();
-            this.MainGame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.PlayerChoicePage.SuspendLayout();
+            this.SingleplayerGame.SuspendLayout();
+            this.MultiplayerGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCanvasS)).BeginInit();
             this.SuspendLayout();
             // 
             // tabController
             // 
             this.tabController.Controls.Add(this.StartPage);
             this.tabController.Controls.Add(this.PlayerChoicePage);
-            this.tabController.Controls.Add(this.MainGame);
+            this.tabController.Controls.Add(this.SingleplayerGame);
+            this.tabController.Controls.Add(this.MultiplayerGame);
             this.tabController.Location = new System.Drawing.Point(-15, -63);
             this.tabController.Margin = new System.Windows.Forms.Padding(4);
             this.tabController.Name = "tabController";
@@ -113,24 +120,97 @@
             this.GameTitle.TabIndex = 3;
             this.GameTitle.Text = ".NOM";
             // 
-            // MainGame
+            // PlayerChoicePage
             // 
-            this.MainGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainGame.BackgroundImage")));
-            this.MainGame.Controls.Add(this.ScoreCount2);
-            this.MainGame.Controls.Add(this.ScoreLabel2);
-            this.MainGame.Controls.Add(this.FinalScoreText);
-            this.MainGame.Controls.Add(this.RestartGameText);
-            this.MainGame.Controls.Add(this.ScoreCount);
-            this.MainGame.Controls.Add(this.ScoreLabel);
-            this.MainGame.Controls.Add(this.GameOverText);
-            this.MainGame.Controls.Add(this.pbCanvas);
-            this.MainGame.Location = new System.Drawing.Point(4, 25);
-            this.MainGame.Name = "MainGame";
-            this.MainGame.Size = new System.Drawing.Size(2196, 974);
-            this.MainGame.TabIndex = 2;
-            this.MainGame.Text = "MainGame";
-            this.MainGame.UseVisualStyleBackColor = true;
-            this.MainGame.Click += new System.EventHandler(this.MainGame_Click);
+            this.PlayerChoicePage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PlayerChoicePage.BackgroundImage")));
+            this.PlayerChoicePage.Controls.Add(this.MultiplayerButton);
+            this.PlayerChoicePage.Controls.Add(this.SinglePlayerButton);
+            this.PlayerChoicePage.Controls.Add(this.PlayerChoices);
+            this.PlayerChoicePage.Location = new System.Drawing.Point(4, 25);
+            this.PlayerChoicePage.Name = "PlayerChoicePage";
+            this.PlayerChoicePage.Size = new System.Drawing.Size(2196, 974);
+            this.PlayerChoicePage.TabIndex = 3;
+            this.PlayerChoicePage.Text = "PlayerChoicePage";
+            this.PlayerChoicePage.UseVisualStyleBackColor = true;
+            // 
+            // MultiplayerButton
+            // 
+            this.MultiplayerButton.BackColor = System.Drawing.Color.Transparent;
+            this.MultiplayerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultiplayerButton.BackgroundImage")));
+            this.MultiplayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MultiplayerButton.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MultiplayerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.MultiplayerButton.Location = new System.Drawing.Point(687, 437);
+            this.MultiplayerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MultiplayerButton.Name = "MultiplayerButton";
+            this.MultiplayerButton.Size = new System.Drawing.Size(408, 103);
+            this.MultiplayerButton.TabIndex = 7;
+            this.MultiplayerButton.Text = "Multiplayer";
+            this.MultiplayerButton.UseVisualStyleBackColor = false;
+            this.MultiplayerButton.Click += new System.EventHandler(this.MultiplayerButton_Click);
+            // 
+            // SinglePlayerButton
+            // 
+            this.SinglePlayerButton.BackColor = System.Drawing.Color.Transparent;
+            this.SinglePlayerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SinglePlayerButton.BackgroundImage")));
+            this.SinglePlayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SinglePlayerButton.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SinglePlayerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SinglePlayerButton.Location = new System.Drawing.Point(687, 280);
+            this.SinglePlayerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SinglePlayerButton.Name = "SinglePlayerButton";
+            this.SinglePlayerButton.Size = new System.Drawing.Size(408, 103);
+            this.SinglePlayerButton.TabIndex = 6;
+            this.SinglePlayerButton.Text = "Singleplayer";
+            this.SinglePlayerButton.UseVisualStyleBackColor = false;
+            this.SinglePlayerButton.Click += new System.EventHandler(this.SinglePlayerButton_Click);
+            // 
+            // PlayerChoices
+            // 
+            this.PlayerChoices.AutoSize = true;
+            this.PlayerChoices.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerChoices.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerChoices.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PlayerChoices.Location = new System.Drawing.Point(601, 77);
+            this.PlayerChoices.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PlayerChoices.Name = "PlayerChoices";
+            this.PlayerChoices.Size = new System.Drawing.Size(602, 111);
+            this.PlayerChoices.TabIndex = 5;
+            this.PlayerChoices.Text = "Player Choices";
+            // 
+            // SingleplayerGame
+            // 
+            this.SingleplayerGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SingleplayerGame.BackgroundImage")));
+            this.SingleplayerGame.Controls.Add(this.ScoreForSingleP);
+            this.SingleplayerGame.Controls.Add(this.ScoreLabel3);
+            this.SingleplayerGame.Controls.Add(this.pbCanvasS);
+            this.SingleplayerGame.Location = new System.Drawing.Point(4, 25);
+            this.SingleplayerGame.Name = "SingleplayerGame";
+            this.SingleplayerGame.Size = new System.Drawing.Size(2196, 974);
+            this.SingleplayerGame.TabIndex = 4;
+            this.SingleplayerGame.Text = "SingleplayerGame";
+            this.SingleplayerGame.UseVisualStyleBackColor = true;
+            this.SingleplayerGame.Click += new System.EventHandler(this.pbCanvas_Click);
+            this.SingleplayerGame.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
+            // 
+            // MultiplayerGame
+            // 
+            this.MultiplayerGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultiplayerGame.BackgroundImage")));
+            this.MultiplayerGame.Controls.Add(this.ScoreCount2);
+            this.MultiplayerGame.Controls.Add(this.ScoreLabel2);
+            this.MultiplayerGame.Controls.Add(this.FinalScoreText);
+            this.MultiplayerGame.Controls.Add(this.RestartGameText);
+            this.MultiplayerGame.Controls.Add(this.ScoreCount);
+            this.MultiplayerGame.Controls.Add(this.ScoreLabel);
+            this.MultiplayerGame.Controls.Add(this.GameOverText);
+            this.MultiplayerGame.Controls.Add(this.pbCanvas);
+            this.MultiplayerGame.Location = new System.Drawing.Point(4, 25);
+            this.MultiplayerGame.Name = "MultiplayerGame";
+            this.MultiplayerGame.Size = new System.Drawing.Size(2196, 974);
+            this.MultiplayerGame.TabIndex = 2;
+            this.MultiplayerGame.Text = "MultiplayerGame";
+            this.MultiplayerGame.UseVisualStyleBackColor = true;
+            this.MultiplayerGame.Click += new System.EventHandler(this.MainGame_Click);
             // 
             // ScoreCount2
             // 
@@ -227,69 +307,46 @@
             this.pbCanvas.Click += new System.EventHandler(this.pbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
-            // PlayerChoicePage
+            // pbCanvasS
             // 
-            this.PlayerChoicePage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PlayerChoicePage.BackgroundImage")));
-            this.PlayerChoicePage.Controls.Add(this.MultiplayerButton);
-            this.PlayerChoicePage.Controls.Add(this.SinglePlayerButton);
-            this.PlayerChoicePage.Controls.Add(this.PlayerChoices);
-            this.PlayerChoicePage.Location = new System.Drawing.Point(4, 25);
-            this.PlayerChoicePage.Name = "PlayerChoicePage";
-            this.PlayerChoicePage.Size = new System.Drawing.Size(2196, 974);
-            this.PlayerChoicePage.TabIndex = 3;
-            this.PlayerChoicePage.Text = "PlayerChoicePage";
-            this.PlayerChoicePage.UseVisualStyleBackColor = true;
+            this.pbCanvasS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbCanvasS.BackgroundImage")));
+            this.pbCanvasS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCanvasS.Location = new System.Drawing.Point(111, 124);
+            this.pbCanvasS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbCanvasS.Name = "pbCanvasS";
+            this.pbCanvasS.Size = new System.Drawing.Size(1487, 541);
+            this.pbCanvasS.TabIndex = 6;
+            this.pbCanvasS.TabStop = false;
+            this.pbCanvasS.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
-            // SinglePlayerButton
+            // ScoreForSingleP
             // 
-            this.SinglePlayerButton.BackColor = System.Drawing.Color.Transparent;
-            this.SinglePlayerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SinglePlayerButton.BackgroundImage")));
-            this.SinglePlayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SinglePlayerButton.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SinglePlayerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SinglePlayerButton.Location = new System.Drawing.Point(687, 280);
-            this.SinglePlayerButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SinglePlayerButton.Name = "SinglePlayerButton";
-            this.SinglePlayerButton.Size = new System.Drawing.Size(408, 103);
-            this.SinglePlayerButton.TabIndex = 6;
-            this.SinglePlayerButton.Text = "Singleplayer";
-            this.SinglePlayerButton.UseVisualStyleBackColor = false;
+            this.ScoreForSingleP.AutoSize = true;
+            this.ScoreForSingleP.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreForSingleP.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ScoreForSingleP.Location = new System.Drawing.Point(885, 67);
+            this.ScoreForSingleP.Name = "ScoreForSingleP";
+            this.ScoreForSingleP.Size = new System.Drawing.Size(46, 32);
+            this.ScoreForSingleP.TabIndex = 12;
+            this.ScoreForSingleP.Text = "00";
             // 
-            // PlayerChoices
+            // ScoreLabel3
             // 
-            this.PlayerChoices.AutoSize = true;
-            this.PlayerChoices.BackColor = System.Drawing.Color.Transparent;
-            this.PlayerChoices.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerChoices.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.PlayerChoices.Location = new System.Drawing.Point(601, 77);
-            this.PlayerChoices.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.PlayerChoices.Name = "PlayerChoices";
-            this.PlayerChoices.Size = new System.Drawing.Size(602, 111);
-            this.PlayerChoices.TabIndex = 5;
-            this.PlayerChoices.Text = "Player Choices";
-            // 
-            // MultiplayerButton
-            // 
-            this.MultiplayerButton.BackColor = System.Drawing.Color.Transparent;
-            this.MultiplayerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultiplayerButton.BackgroundImage")));
-            this.MultiplayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MultiplayerButton.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MultiplayerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.MultiplayerButton.Location = new System.Drawing.Point(687, 437);
-            this.MultiplayerButton.Margin = new System.Windows.Forms.Padding(4);
-            this.MultiplayerButton.Name = "MultiplayerButton";
-            this.MultiplayerButton.Size = new System.Drawing.Size(408, 103);
-            this.MultiplayerButton.TabIndex = 7;
-            this.MultiplayerButton.Text = "Multiplayer";
-            this.MultiplayerButton.UseVisualStyleBackColor = false;
-            this.MultiplayerButton.Click += new System.EventHandler(this.MultiplayerButton_Click);
+            this.ScoreLabel3.AutoSize = true;
+            this.ScoreLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ScoreLabel3.Location = new System.Drawing.Point(756, 63);
+            this.ScoreLabel3.Name = "ScoreLabel3";
+            this.ScoreLabel3.Size = new System.Drawing.Size(101, 36);
+            this.ScoreLabel3.TabIndex = 11;
+            this.ScoreLabel3.Text = "Score:";
             // 
             // MainGamePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1710, 746);
+            this.ClientSize = new System.Drawing.Size(1688, 767);
             this.Controls.Add(this.tabController);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainGamePage";
@@ -297,11 +354,14 @@
             this.tabController.ResumeLayout(false);
             this.StartPage.ResumeLayout(false);
             this.StartPage.PerformLayout();
-            this.MainGame.ResumeLayout(false);
-            this.MainGame.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
             this.PlayerChoicePage.ResumeLayout(false);
             this.PlayerChoicePage.PerformLayout();
+            this.SingleplayerGame.ResumeLayout(false);
+            this.SingleplayerGame.PerformLayout();
+            this.MultiplayerGame.ResumeLayout(false);
+            this.MultiplayerGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCanvasS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +373,7 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Label GameTitle;
         private System.Windows.Forms.Timer gameTimer;
-        private System.Windows.Forms.TabPage MainGame;
+        private System.Windows.Forms.TabPage MultiplayerGame;
         private System.Windows.Forms.Label GameOverText;
         private System.Windows.Forms.PictureBox pbCanvas;
         private System.Windows.Forms.Label ScoreLabel;
@@ -326,5 +386,9 @@
         private System.Windows.Forms.Button MultiplayerButton;
         private System.Windows.Forms.Button SinglePlayerButton;
         private System.Windows.Forms.Label PlayerChoices;
+        private System.Windows.Forms.TabPage SingleplayerGame;
+        private System.Windows.Forms.Label ScoreForSingleP;
+        private System.Windows.Forms.Label ScoreLabel3;
+        private System.Windows.Forms.PictureBox pbCanvasS;
     }
 }

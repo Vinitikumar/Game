@@ -40,12 +40,17 @@ namespace Game
         {
             tabController.SelectedTab = PlayerChoicePage;
         }
-
+        private void SinglePlayerButton_Click(object sender, EventArgs e)
+        {
+            started = true;
+            tabController.SelectedTab = SingleplayerGame;
+        }
         private void MultiplayerButton_Click(object sender, EventArgs e)
         {
             started = true;
-            tabController.SelectedTab = MainGame;
+            tabController.SelectedTab = MultiplayerGame;
         }
+
 
         private void updateGraphics(object sender, PaintEventArgs e)
         {
@@ -539,5 +544,7 @@ namespace Game
 
 
         }
+
+
     }
 }
