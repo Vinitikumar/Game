@@ -8,7 +8,6 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Game
 {
     public partial class MainGameForm : Form
@@ -60,11 +59,11 @@ namespace Game
                 {
                     if (i == 0)
                     {
-                        snakeColour = Brushes.LightBlue;
+                        snakeColour = Brushes.LimeGreen;
                     }
                     else
                     {
-                        snakeColour = Brushes.DarkTurquoise;
+                        snakeColour = Brushes.ForestGreen;
                     }
                     canvas.FillEllipse(snakeColour,
                     new Rectangle(
@@ -87,11 +86,11 @@ namespace Game
                     {
                         if (i == 0)
                         {
-                            snakeColour = Brushes.LimeGreen;
+                            snakeColour = Brushes.LightBlue;
                         }
                         else
                         {
-                            snakeColour = Brushes.ForestGreen;
+                            snakeColour = Brushes.DarkTurquoise;
                         }
                         canvas.FillEllipse(snakeColour,
                         new Rectangle(
@@ -105,22 +104,29 @@ namespace Game
             else
             {
                 string gameOver = "Game Over!";
-                string finalScore = "Final Score" + "\nGreenSnake: " + Settings.Player1Score + "\nBlueSnake: " + Settings.Player2Score;
+                string finalScoreGreenSnake = "Final Score" + "\nGreenSnake: " + Settings.Player1Score;
+                string finalScoreBlueSnake = "BlueSnake: " + Settings.Player2Score;
                 string restartGame = "Press enter to Restart";
                 GameOverText.Text = gameOver;
                 RestartGameText.Text = restartGame;
-                FinalScoreText.Text = finalScore;
+                FinalScoreGreenSnakeText.Text = finalScoreGreenSnake;
+                FinalScoreBlueSnakeText.Text = finalScoreBlueSnake;
 
                 GameOverText.Visible = true;
                 RestartGameText.Visible = true;
-                FinalScoreText.Visible = true;
+                FinalScoreGreenSnakeText.Visible = true;
+
+                FinalScoreBlueSnakeText.Visible = true;
+
             }
         }
         private void startGame()
         {
             GameOverText.Visible = false;
             RestartGameText.Visible = false;
-            FinalScoreText.Visible = false;
+            FinalScoreGreenSnakeText.Visible = false;
+
+            FinalScoreBlueSnakeText.Visible = false;
 
             new Settings();
 
@@ -355,7 +361,7 @@ namespace Game
         {
             if (startedSP)
             {
-                
+
                 updateScreen(sender, e);
                 currentKeyPressedMainGamePage = e.KeyValue;
             }
@@ -366,6 +372,6 @@ namespace Game
                 currentKeyPressedMainGamePage = e.KeyValue;
             }
             e.Handled = true;
-        }       
+        }
     }
 }
