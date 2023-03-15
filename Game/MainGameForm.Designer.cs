@@ -1,6 +1,6 @@
 ﻿namespace Game
 {
-    partial class MainGame
+    partial class MainGameForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGame));
             this.tabController = new System.Windows.Forms.TabControl();
             this.StartPage = new System.Windows.Forms.TabPage();
             this.GameTitlePic = new System.Windows.Forms.PictureBox();
@@ -38,9 +37,6 @@
             this.MultiplayerButton = new System.Windows.Forms.Button();
             this.SinglePlayerButton = new System.Windows.Forms.Button();
             this.PlayerChoices = new System.Windows.Forms.Label();
-            this.SingleplayerGame = new System.Windows.Forms.TabPage();
-            this.ScoreForSingleP = new System.Windows.Forms.Label();
-            this.ScoreLabel3 = new System.Windows.Forms.Label();
             this.MultiplayerGame = new System.Windows.Forms.TabPage();
             this.ScoreCount2 = new System.Windows.Forms.Label();
             this.ScoreLabel2 = new System.Windows.Forms.Label();
@@ -55,7 +51,6 @@
             this.StartPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).BeginInit();
             this.PlayerChoicePage.SuspendLayout();
-            this.SingleplayerGame.SuspendLayout();
             this.MultiplayerGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +59,6 @@
             // 
             this.tabController.Controls.Add(this.StartPage);
             this.tabController.Controls.Add(this.PlayerChoicePage);
-            this.tabController.Controls.Add(this.SingleplayerGame);
             this.tabController.Controls.Add(this.MultiplayerGame);
             this.tabController.Location = new System.Drawing.Point(-3, -63);
             this.tabController.Margin = new System.Windows.Forms.Padding(4);
@@ -168,41 +162,6 @@
             this.PlayerChoices.Size = new System.Drawing.Size(791, 145);
             this.PlayerChoices.TabIndex = 5;
             this.PlayerChoices.Text = "Player Choices";
-            // 
-            // SingleplayerGame
-            // 
-            this.SingleplayerGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SingleplayerGame.BackgroundImage")));
-            this.SingleplayerGame.Controls.Add(this.ScoreForSingleP);
-            this.SingleplayerGame.Controls.Add(this.ScoreLabel3);
-            this.SingleplayerGame.Location = new System.Drawing.Point(4, 25);
-            this.SingleplayerGame.Name = "SingleplayerGame";
-            this.SingleplayerGame.Size = new System.Drawing.Size(1204, 846);
-            this.SingleplayerGame.TabIndex = 4;
-            this.SingleplayerGame.Text = "SingleplayerGame";
-            this.SingleplayerGame.UseVisualStyleBackColor = true;
-            this.SingleplayerGame.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
-            // 
-            // ScoreForSingleP
-            // 
-            this.ScoreForSingleP.AutoSize = true;
-            this.ScoreForSingleP.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreForSingleP.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ScoreForSingleP.Location = new System.Drawing.Point(651, 71);
-            this.ScoreForSingleP.Name = "ScoreForSingleP";
-            this.ScoreForSingleP.Size = new System.Drawing.Size(46, 32);
-            this.ScoreForSingleP.TabIndex = 12;
-            this.ScoreForSingleP.Text = "00";
-            // 
-            // ScoreLabel3
-            // 
-            this.ScoreLabel3.AutoSize = true;
-            this.ScoreLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ScoreLabel3.Location = new System.Drawing.Point(522, 67);
-            this.ScoreLabel3.Name = "ScoreLabel3";
-            this.ScoreLabel3.Size = new System.Drawing.Size(101, 36);
-            this.ScoreLabel3.TabIndex = 11;
-            this.ScoreLabel3.Text = "Score:";
             // 
             // MultiplayerGame
             // 
@@ -315,7 +274,7 @@
             this.pbCanvas.TabStop = false;
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
-            // MainGamePage
+            // MainGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -323,15 +282,13 @@
             this.ClientSize = new System.Drawing.Size(1206, 809);
             this.Controls.Add(this.tabController);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "MainGamePage";
+            this.Name = "MainGameForm";
             this.Text = "StartScreen";
             this.tabController.ResumeLayout(false);
             this.StartPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).EndInit();
             this.PlayerChoicePage.ResumeLayout(false);
             this.PlayerChoicePage.PerformLayout();
-            this.SingleplayerGame.ResumeLayout(false);
-            this.SingleplayerGame.PerformLayout();
             this.MultiplayerGame.ResumeLayout(false);
             this.MultiplayerGame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
@@ -358,9 +315,6 @@
         private System.Windows.Forms.Button MultiplayerButton;
         private System.Windows.Forms.Button SinglePlayerButton;
         private System.Windows.Forms.Label PlayerChoices;
-        private System.Windows.Forms.TabPage SingleplayerGame;
-        private System.Windows.Forms.Label ScoreForSingleP;
-        private System.Windows.Forms.Label ScoreLabel3;
         private System.Windows.Forms.PictureBox GameTitlePic;
     }
 }

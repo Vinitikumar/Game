@@ -11,15 +11,17 @@ using System.Windows.Forms;
 
 namespace Game
 {
-    public partial class MainGame : Form
+    public partial class MainGameForm : Form
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
         private List<Circle> Snake2 = new List<Circle>();
 
-        Boolean started = false;
+
+        Boolean startedMP = false;
+        Boolean startedSP = false;
         int currentKeyPressedMainGamePage = -1;
-        public MainGame()
+        public MainGameForm()
         {
             InitializeComponent();
 
@@ -38,12 +40,12 @@ namespace Game
         }
         private void SinglePlayerButton_Click(object sender, EventArgs e)
         {
-            started = true;
-            tabController.SelectedTab = SingleplayerGame;
+            startedSP = true;
+            tabController.SelectedTab = MultiplayerGame;
         }
         private void MultiplayerButton_Click(object sender, EventArgs e)
         {
-            started = true;
+            startedMP = true;
             tabController.SelectedTab = MultiplayerGame;
         }
         private void updateGraphics(object sender, PaintEventArgs e)
@@ -58,11 +60,11 @@ namespace Game
                 {
                     if (i == 0)
                     {
-                        snakeColour = Brushes.LimeGreen;
+                        snakeColour = Brushes.LightBlue;
                     }
                     else
                     {
-                        snakeColour = Brushes.ForestGreen;
+                        snakeColour = Brushes.DarkTurquoise;
                     }
                     canvas.FillEllipse(snakeColour,
                     new Rectangle(
@@ -78,22 +80,26 @@ namespace Game
                     Settings.Width, Settings.Height
                     ));
                 }
-                for (int i = 0; i < Snake2.Count; i++)
+
+                if (startedMP)
                 {
-                    if (i == 0)
+                    for (int i = 0; i < Snake2.Count; i++)
                     {
-                        snakeColour = Brushes.LightBlue;
+                        if (i == 0)
+                        {
+                            snakeColour = Brushes.LimeGreen;
+                        }
+                        else
+                        {
+                            snakeColour = Brushes.ForestGreen;
+                        }
+                        canvas.FillEllipse(snakeColour,
+                        new Rectangle(
+                        Snake2[i].X * Settings.Width,
+                        Snake2[i].Y * Settings.Height,
+                        Settings.Width, Settings.Height
+                        ));
                     }
-                    else
-                    {
-                        snakeColour = Brushes.DarkTurquoise;
-                    }
-                    canvas.FillEllipse(snakeColour,
-                    new Rectangle(
-                    Snake2[i].X * Settings.Width,
-                    Snake2[i].Y * Settings.Height,
-                    Settings.Width, Settings.Height
-                    ));
                 }
             }
             else
@@ -130,6 +136,7 @@ namespace Game
 
             generateFood();
         }
+
         private void movePlayer()
         {
             for (int i = Snake.Count - 1; i >= 0; i--)
@@ -160,12 +167,14 @@ namespace Game
                     Snake[i].X > maxXpos || Snake[i].Y > maxYpos
                     )
                     {
+                        Console.WriteLine("Collision with border, snake 1");
                         die();
                     }
                     for (int j = 1; j < Snake.Count; j++)
                     {
                         if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y)
                         {
+                            Console.WriteLine("Collision with body");
                             die();
                         }
                     }
@@ -183,6 +192,11 @@ namespace Game
         }
         private void movePlayer2()
         {
+            if (startedSP)
+            {
+                return;
+            }
+
             for (int i = Snake2.Count - 1; i >= 0; i--)
             {
                 if (i == 0)
@@ -211,12 +225,14 @@ namespace Game
                     Snake2[i].X > maxXpos || Snake2[i].Y > maxYpos
                     )
                     {
+                        Console.WriteLine("Collision with borders, snake2");
                         die();
                     }
                     for (int j = 1; j < Snake2.Count; j++)
                     {
                         if (Snake2[i].X == Snake2[j].X && Snake2[i].Y == Snake2[j].Y)
                         {
+                            Console.WriteLine("Collision with body, snake 2");
                             die();
                         }
                     }
@@ -337,7 +353,13 @@ namespace Game
         }
         private void tabController_KeyDown(object sender, KeyEventArgs e)
         {
-            if (started)
+            if (startedSP)
+            {
+                
+                updateScreen(sender, e);
+                currentKeyPressedMainGamePage = e.KeyValue;
+            }
+            else if (startedMP)
             {
                 updateScreen(sender, e);
                 updateScreen2(sender, e);
