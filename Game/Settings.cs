@@ -21,7 +21,7 @@ namespace Game
         public static int Player1Score { get; set; }
         public static int Player2Score { get; set; }
         public static int Points { get; set; } 
-        public static bool GameOver { get; set; } 
+        public static bool GameOver { get; set; }
         public static Directions direction { get; set; }
         public static Directions direction2 { get; set; }
 
