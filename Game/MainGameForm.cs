@@ -14,7 +14,6 @@ namespace Game
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
-
         private List<Circle> Snake2 = new List<Circle>();
 
 
@@ -41,12 +40,12 @@ namespace Game
         private void SinglePlayerButton_Click(object sender, EventArgs e)
         {
             startedSP = true;
-            tabController.SelectedTab = MultiplayerGame;
+            tabController.SelectedTab = SPAndMPGame;
         }
         private void MultiplayerButton_Click(object sender, EventArgs e)
         {
             startedMP = true;
-            tabController.SelectedTab = MultiplayerGame;
+            tabController.SelectedTab = SPAndMPGame;
         }
         private void updateGraphics(object sender, PaintEventArgs e)
         {
@@ -319,9 +318,16 @@ namespace Game
         }
         private void updateScreen(object sender, EventArgs e)
         {
-            if (Settings.GameOver == true && currentKeyPressedMainGamePage == (int)Keys.Enter)
+            if (Settings.GameOver == true)
             {
-                startGame();
+                if (currentKeyPressedMainGamePage == (int)Keys.Enter)
+                {
+                    startGame();
+                }
+                else if (currentKeyPressedMainGamePage == (int)Keys.Escape)
+                {
+                    tabController.SelectedTab = PlayerChoicePage;
+                }
             }
             else if (currentKeyPressedMainGamePage != -1)
             {
@@ -353,9 +359,16 @@ namespace Game
                 ScoreCount2.Visible = false;
                 FinalScoreBlueSnakeText.Visible = false;
             }
-            if (Settings.GameOver == true && currentKeyPressedMainGamePage == (int)Keys.Enter)
+            else if (Settings.GameOver == true)
             {
+                if (currentKeyPressedMainGamePage == (int)Keys.Enter)
+                {
                     startGame();
+                }
+                else if (currentKeyPressedMainGamePage == (int)Keys.Escape)
+                {
+                    tabController.SelectedTab = PlayerChoicePage;
+                }
             }
             else if (currentKeyPressedMainGamePage != -1)
             {
@@ -384,7 +397,6 @@ namespace Game
             if (startedSP)
             {
                 updateScreen(sender, e);
-                FinalScoreBlueSnakeText.Visible = false;
                 currentKeyPressedMainGamePage = e.KeyValue;
             }
             else if (startedMP)
@@ -392,6 +404,7 @@ namespace Game
                 updateScreen(sender, e);
                 updateScreen2(sender, e);
                 currentKeyPressedMainGamePage = e.KeyValue;
+
             }
             e.Handled = true;
         }

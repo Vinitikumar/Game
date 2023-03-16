@@ -37,7 +37,8 @@
             this.MultiplayerButton = new System.Windows.Forms.Button();
             this.SinglePlayerButton = new System.Windows.Forms.Button();
             this.PlayerChoices = new System.Windows.Forms.Label();
-            this.MultiplayerGame = new System.Windows.Forms.TabPage();
+            this.SPAndMPGame = new System.Windows.Forms.TabPage();
+            this.hamImage = new System.Windows.Forms.PictureBox();
             this.FinalScoreBlueSnakeText = new System.Windows.Forms.Label();
             this.ScoreCount2 = new System.Windows.Forms.Label();
             this.ScoreLabel2 = new System.Windows.Forms.Label();
@@ -52,7 +53,8 @@
             this.StartPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).BeginInit();
             this.PlayerChoicePage.SuspendLayout();
-            this.MultiplayerGame.SuspendLayout();
+            this.SPAndMPGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hamImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             // 
             this.tabController.Controls.Add(this.StartPage);
             this.tabController.Controls.Add(this.PlayerChoicePage);
-            this.tabController.Controls.Add(this.MultiplayerGame);
+            this.tabController.Controls.Add(this.SPAndMPGame);
             this.tabController.Location = new System.Drawing.Point(-3, -63);
             this.tabController.Margin = new System.Windows.Forms.Padding(4);
             this.tabController.Name = "tabController";
@@ -85,11 +87,11 @@
             // GameTitlePic
             // 
             this.GameTitlePic.BackColor = System.Drawing.Color.Transparent;
-            this.GameTitlePic.BackgroundImage = global::Game.Properties.Resources.GameLogo;
             this.GameTitlePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GameTitlePic.Location = new System.Drawing.Point(165, 109);
+            this.GameTitlePic.Image = global::Game.Properties.Resources.logo3;
+            this.GameTitlePic.Location = new System.Drawing.Point(154, 128);
             this.GameTitlePic.Name = "GameTitlePic";
-            this.GameTitlePic.Size = new System.Drawing.Size(850, 330);
+            this.GameTitlePic.Size = new System.Drawing.Size(819, 380);
             this.GameTitlePic.TabIndex = 5;
             this.GameTitlePic.TabStop = false;
             // 
@@ -164,24 +166,33 @@
             this.PlayerChoices.TabIndex = 5;
             this.PlayerChoices.Text = "Player Choices";
             // 
-            // MultiplayerGame
+            // SPAndMPGame
             // 
-            this.MultiplayerGame.BackColor = System.Drawing.Color.Black;
-            this.MultiplayerGame.Controls.Add(this.FinalScoreBlueSnakeText);
-            this.MultiplayerGame.Controls.Add(this.ScoreCount2);
-            this.MultiplayerGame.Controls.Add(this.ScoreLabel2);
-            this.MultiplayerGame.Controls.Add(this.FinalScoreGreenSnakeText);
-            this.MultiplayerGame.Controls.Add(this.RestartGameText);
-            this.MultiplayerGame.Controls.Add(this.ScoreCount);
-            this.MultiplayerGame.Controls.Add(this.ScoreLabel);
-            this.MultiplayerGame.Controls.Add(this.GameOverText);
-            this.MultiplayerGame.Controls.Add(this.pbCanvas);
-            this.MultiplayerGame.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MultiplayerGame.Location = new System.Drawing.Point(4, 25);
-            this.MultiplayerGame.Name = "MultiplayerGame";
-            this.MultiplayerGame.Size = new System.Drawing.Size(1204, 846);
-            this.MultiplayerGame.TabIndex = 2;
-            this.MultiplayerGame.Text = "MultiplayerGame";
+            this.SPAndMPGame.BackColor = System.Drawing.Color.Black;
+            this.SPAndMPGame.Controls.Add(this.hamImage);
+            this.SPAndMPGame.Controls.Add(this.FinalScoreBlueSnakeText);
+            this.SPAndMPGame.Controls.Add(this.ScoreCount2);
+            this.SPAndMPGame.Controls.Add(this.ScoreLabel2);
+            this.SPAndMPGame.Controls.Add(this.FinalScoreGreenSnakeText);
+            this.SPAndMPGame.Controls.Add(this.RestartGameText);
+            this.SPAndMPGame.Controls.Add(this.ScoreCount);
+            this.SPAndMPGame.Controls.Add(this.ScoreLabel);
+            this.SPAndMPGame.Controls.Add(this.GameOverText);
+            this.SPAndMPGame.Controls.Add(this.pbCanvas);
+            this.SPAndMPGame.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SPAndMPGame.Location = new System.Drawing.Point(4, 25);
+            this.SPAndMPGame.Name = "SPAndMPGame";
+            this.SPAndMPGame.Size = new System.Drawing.Size(1204, 846);
+            this.SPAndMPGame.TabIndex = 2;
+            this.SPAndMPGame.Text = "SPAndMPGame";
+            // 
+            // hamImage
+            // 
+            this.hamImage.Location = new System.Drawing.Point(594, 371);
+            this.hamImage.Name = "hamImage";
+            this.hamImage.Size = new System.Drawing.Size(66, 56);
+            this.hamImage.TabIndex = 16;
+            this.hamImage.TabStop = false;
             // 
             // FinalScoreBlueSnakeText
             // 
@@ -292,7 +303,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Game.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1206, 809);
             this.Controls.Add(this.tabController);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -303,8 +313,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).EndInit();
             this.PlayerChoicePage.ResumeLayout(false);
             this.PlayerChoicePage.PerformLayout();
-            this.MultiplayerGame.ResumeLayout(false);
-            this.MultiplayerGame.PerformLayout();
+            this.SPAndMPGame.ResumeLayout(false);
+            this.SPAndMPGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hamImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
             this.ResumeLayout(false);
 
@@ -316,7 +327,7 @@
         private System.Windows.Forms.TabPage StartPage;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Timer gameTimer;
-        private System.Windows.Forms.TabPage MultiplayerGame;
+        private System.Windows.Forms.TabPage SPAndMPGame;
         private System.Windows.Forms.Label GameOverText;
         private System.Windows.Forms.PictureBox pbCanvas;
         private System.Windows.Forms.Label ScoreLabel;
@@ -331,5 +342,6 @@
         private System.Windows.Forms.Label PlayerChoices;
         private System.Windows.Forms.PictureBox GameTitlePic;
         private System.Windows.Forms.Label FinalScoreBlueSnakeText;
+        private System.Windows.Forms.PictureBox hamImage;
     }
 }
