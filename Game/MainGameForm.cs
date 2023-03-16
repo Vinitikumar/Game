@@ -14,6 +14,7 @@ namespace Game
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
+
         private List<Circle> Snake2 = new List<Circle>();
 
 
@@ -115,17 +116,23 @@ namespace Game
                 GameOverText.Visible = true;
                 RestartGameText.Visible = true;
                 FinalScoreGreenSnakeText.Visible = true;
-
-                FinalScoreBlueSnakeText.Visible = true;
+                if (startedSP)
+                {
+                    FinalScoreBlueSnakeText.Visible = false;
+                }
+                else if (startedMP)
+                {
+                    FinalScoreBlueSnakeText.Visible = true;
+                }
 
             }
         }
+
         private void startGame()
         {
             GameOverText.Visible = false;
             RestartGameText.Visible = false;
             FinalScoreGreenSnakeText.Visible = false;
-
             FinalScoreBlueSnakeText.Visible = false;
 
             new Settings();
@@ -137,8 +144,23 @@ namespace Game
             Snake.Add(head);
             Snake2.Add(head2);
 
+
+            ScoreCount.Visible = true;
+            ScoreLabel.Visible = true;
             ScoreCount.Text = Settings.Player1Score.ToString();
+
+            if (startedSP)
+            {
+                ScoreCount2.Visible = false;
+                ScoreLabel2.Visible = false;
+            }
+            else if (startedMP)
+            {
+                ScoreCount2.Visible = true;
+                ScoreLabel2.Visible = true;
+            }
             ScoreCount2.Text = Settings.Player2Score.ToString();
+
 
             generateFood();
         }
@@ -297,12 +319,9 @@ namespace Game
         }
         private void updateScreen(object sender, EventArgs e)
         {
-            if (Settings.GameOver == true)
+            if (Settings.GameOver == true && currentKeyPressedMainGamePage == (int)Keys.Enter)
             {
-                if (currentKeyPressedMainGamePage == (int)Keys.Enter)
-                {
-                    startGame();
-                }
+                startGame();
             }
             else if (currentKeyPressedMainGamePage != -1)
             {
@@ -328,12 +347,15 @@ namespace Game
         }
         private void updateScreen2(object sender, EventArgs e)
         {
-            if (Settings.GameOver == true)
+            if (startedSP)
             {
-                if (currentKeyPressedMainGamePage == (int)Keys.Enter)
-                {
+                ScoreLabel2.Visible = false;
+                ScoreCount2.Visible = false;
+                FinalScoreBlueSnakeText.Visible = false;
+            }
+            if (Settings.GameOver == true && currentKeyPressedMainGamePage == (int)Keys.Enter)
+            {
                     startGame();
-                }
             }
             else if (currentKeyPressedMainGamePage != -1)
             {
@@ -361,8 +383,8 @@ namespace Game
         {
             if (startedSP)
             {
-
                 updateScreen(sender, e);
+                FinalScoreBlueSnakeText.Visible = false;
                 currentKeyPressedMainGamePage = e.KeyValue;
             }
             else if (startedMP)
