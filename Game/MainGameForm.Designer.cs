@@ -85,7 +85,7 @@
             // GameTitlePic
             // 
             this.GameTitlePic.BackColor = System.Drawing.Color.Transparent;
-            this.GameTitlePic.BackgroundImage = global::Game.Properties.Resources.logo3;
+            this.GameTitlePic.BackgroundImage = global::Game.Properties.Resources.GameLogo;
             this.GameTitlePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GameTitlePic.Location = new System.Drawing.Point(165, 109);
             this.GameTitlePic.Name = "GameTitlePic";
@@ -188,7 +188,7 @@
             this.FinalScoreBlueSnakeText.AutoSize = true;
             this.FinalScoreBlueSnakeText.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalScoreBlueSnakeText.ForeColor = System.Drawing.Color.LimeGreen;
-            this.FinalScoreBlueSnakeText.Location = new System.Drawing.Point(403, 570);
+            this.FinalScoreBlueSnakeText.Location = new System.Drawing.Point(403, 573);
             this.FinalScoreBlueSnakeText.Name = "FinalScoreBlueSnakeText";
             this.FinalScoreBlueSnakeText.Size = new System.Drawing.Size(439, 75);
             this.FinalScoreBlueSnakeText.TabIndex = 15;
@@ -222,7 +222,7 @@
             this.FinalScoreGreenSnakeText.AutoSize = true;
             this.FinalScoreGreenSnakeText.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalScoreGreenSnakeText.ForeColor = System.Drawing.Color.LimeGreen;
-            this.FinalScoreGreenSnakeText.Location = new System.Drawing.Point(387, 426);
+            this.FinalScoreGreenSnakeText.Location = new System.Drawing.Point(387, 430);
             this.FinalScoreGreenSnakeText.Name = "FinalScoreGreenSnakeText";
             this.FinalScoreGreenSnakeText.Size = new System.Drawing.Size(475, 75);
             this.FinalScoreGreenSnakeText.TabIndex = 12;
@@ -257,7 +257,7 @@
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.ScoreLabel.Location = new System.Drawing.Point(716, 80);
+            this.ScoreLabel.Location = new System.Drawing.Point(699, 81);
             this.ScoreLabel.Name = "ScoreLabel";
             this.ScoreLabel.Size = new System.Drawing.Size(250, 37);
             this.ScoreLabel.TabIndex = 9;
