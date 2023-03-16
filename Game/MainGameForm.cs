@@ -12,9 +12,9 @@ namespace Game
 {
     public partial class MainGameForm : Form
     {
-        private List<Circle> Snake = new List<Circle>();
-        private Circle food = new Circle();
-        private List<Circle> Snake2 = new List<Circle>();
+        private List<Circle> GreenSnake = new List<Circle>(); // Erstellung eines Listen-Arrays für die Schlange ("Snake")
+        private Circle food = new Circle(); // Erstellen einer einzelnen Circle-Klasse namens "food"
+        private List<Circle> BlueSnake = new List<Circle>();
 
 
         Boolean startedMP = false;
@@ -24,38 +24,44 @@ namespace Game
         {
             InitializeComponent();
 
-            new Settings();
+            new Settings(); // Verknüpfung der "Settings"-Klasse mit dem Form
 
-            gameTimer.Interval = 1500 / Settings.Speed;
-            gameTimer.Tick += updateScreen;
-            gameTimer.Tick += updateScreen2;
-            gameTimer.Start();
+            gameTimer.Interval = 1500 / Settings.Speed; // Ändeern der Spielzeit auf "Settings-Klasse" mit dem Form
+            gameTimer.Tick += updateScreenSPMP; // Verknüpfung einer "updateScreenSPMP-Funkton" mit dem Timer
+            gameTimer.Tick += updateScreenSP;
+            gameTimer.Start(); // Timer starten
 
-            startGame();
+            startGame(); // "startGame-Funktion" ausführen
         }
         private void startButton_Click_1(object sender, EventArgs e)
         {
-            tabController.SelectedTab = PlayerChoicePage;
+            tabController.SelectedTab = PlayerChoicePage; // nach klicken der "startButton" wird die Seite
+                                                          // mit den Optionen der player choices geöffnet
         }
-        private void SinglePlayerButton_Click(object sender, EventArgs e)
+        private void singlePlayerButton_Click(object sender, EventArgs e)
         {
             startedSP = true;
-            tabController.SelectedTab = SPAndMPGame;
+            tabController.SelectedTab = SPAndMPGame; // nach klicken der "SinglePlayerButton" wird
+                                                     // die "Singleplayer" Seite geöffnet
         }
-        private void MultiplayerButton_Click(object sender, EventArgs e)
+        private void multiplayerButton_Click(object sender, EventArgs e)
         {
             startedMP = true;
-            tabController.SelectedTab = SPAndMPGame;
+            tabController.SelectedTab = SPAndMPGame; // nach klicken der "SinglePlayerButton" wird
+                                                     // die "Multiplayer" Seite geöffnet
         }
         private void updateGraphics(object sender, PaintEventArgs e)
         {
-            Graphics canvas = e.Graphics;
+            // Bewegung der Schlange und ihre Teile
+            Graphics canvas = e.Graphics; // eine neue "Graphics"-Klasse namens "canvas" wird erstellt
 
             if (Settings.GameOver == false)
             {
-                Brush snakeColour;
+                // wenn das Spiel noch nicht vorbei ist, passiert folgendes
+                Brush snakeColour; 
 
-                for (int i = 0; i < Snake.Count; i++)
+                
+                for (int i = 0; i < GreenSnake.Count; i++)
                 {
                     if (i == 0)
                     {
@@ -67,8 +73,8 @@ namespace Game
                     }
                     canvas.FillEllipse(snakeColour,
                     new Rectangle(
-                    Snake[i].X * Settings.Width,
-                    Snake[i].Y * Settings.Height,
+                    GreenSnake[i].X * Settings.Width,
+                    GreenSnake[i].Y * Settings.Height,
                     Settings.Width, Settings.Height
                     ));
 
@@ -82,7 +88,7 @@ namespace Game
 
                 if (startedMP)
                 {
-                    for (int i = 0; i < Snake2.Count; i++)
+                    for (int i = 0; i < BlueSnake.Count; i++)
                     {
                         if (i == 0)
                         {
@@ -94,8 +100,8 @@ namespace Game
                         }
                         canvas.FillEllipse(snakeColour,
                         new Rectangle(
-                        Snake2[i].X * Settings.Width,
-                        Snake2[i].Y * Settings.Height,
+                        BlueSnake[i].X * Settings.Width,
+                        BlueSnake[i].Y * Settings.Height,
                         Settings.Width, Settings.Height
                         ));
                     }
@@ -136,84 +142,93 @@ namespace Game
 
             new Settings();
 
-            Snake.Clear();
-            Snake2.Clear();
+            GreenSnake.Clear();
+            BlueSnake.Clear();
             Circle head = new Circle { X = 35, Y = 5 };
             Circle head2 = new Circle { X = 10, Y = 5 };
-            Snake.Add(head);
-            Snake2.Add(head2);
+            GreenSnake.Add(head);
+            BlueSnake.Add(head2);
 
 
-            ScoreCount.Visible = true;
-            ScoreLabel.Visible = true;
-            ScoreCount.Text = Settings.Player1Score.ToString();
+            ScoreCountGreen.Visible = true;
+            ScoreLabelGreen.Visible = true;
+            ScoreCountGreen.Text = Settings.Player1Score.ToString();
 
             if (startedSP)
             {
-                ScoreCount2.Visible = false;
-                ScoreLabel2.Visible = false;
+                ScoreCountBlue.Visible = false;
+                ScoreLabelBlue.Visible = false;
             }
             else if (startedMP)
             {
-                ScoreCount2.Visible = true;
-                ScoreLabel2.Visible = true;
+                ScoreCountBlue.Visible = true;
+                ScoreLabelBlue.Visible = true;
             }
-            ScoreCount2.Text = Settings.Player2Score.ToString();
+            ScoreCountBlue.Text = Settings.Player2Score.ToString();
 
 
             generateFood();
         }
 
-        private void movePlayer()
+        private void movePlayer1()
         {
-            for (int i = Snake.Count - 1; i >= 0; i--)
+            // die Hauptschleife für Schlangenkop und-teile
+            for (int i = GreenSnake.Count - 1; i >= 0; i--)
             {
+                // wenn der Schlangenkopf aktiv ist
                 if (i == 0)
                 {
-                    switch (Settings.direction)
+                    // den Rest des Körpers bewegen, je nachdem, in welche Richting sich der Kopf bewegt
+                    switch (Settings.directionGreenSnake)
                     {
                         case Directions.Right:
-                            Snake[i].X++;
+                            GreenSnake[i].X++;
                             break;
                         case Directions.Left:
-                            Snake[i].X--;
+                            GreenSnake[i].X--;
                             break;
                         case Directions.Up:
-                            Snake[i].Y--;
+                            GreenSnake[i].Y--;
                             break;
                         case Directions.Down:
-                            Snake[i].Y++;
+                            GreenSnake[i].Y++;
                             break;
                     }
-
+                    // die Schlange davon abhalen, die "Canvas" zu verlassen
                     int maxXpos = pbCanvas.Size.Width / Settings.Width;
                     int maxYpos = pbCanvas.Size.Height / Settings.Height;
 
                     if (
-                    Snake[i].X < 0 || Snake[i].Y < 0 ||
-                    Snake[i].X > maxXpos || Snake[i].Y > maxYpos
+                    GreenSnake[i].X < 0 || GreenSnake[i].Y < 0 ||
+                    GreenSnake[i].X > maxXpos || GreenSnake[i].Y > maxYpos
                     )
                     {
-                        Console.WriteLine("Collision with border, snake 1");
+                        // Ende des Spiels ist Schlage erreicht entweder Kante der "Canvas"
+                        Console.WriteLine("Collision with border, GreenSnake");
                         die();
                     }
-                    for (int j = 1; j < Snake.Count; j++)
+                    // Kollision mit dem Körper erkennen
+                    // diese Schleife prüft, ob die Schlange eine Kollision mit anderen Körperteilen hatte
+                    for (int j = 1; j < GreenSnake.Count; j++)
                     {
-                        if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y)
+                        if (GreenSnake[i].X == GreenSnake[j].X && GreenSnake[i].Y == GreenSnake[j].Y)
                         {
+                            // wenn ja, wird die Funktion "die()" gestartet
                             Console.WriteLine("Collision with body");
                             die();
                         }
                     }
-                    if (Snake[0].X == food.X && Snake[0].Y == food.Y)
+                    // KOllision zwischen Schlangenkopf und "food" erkennen
+                    if (GreenSnake[0].X == food.X && GreenSnake[0].Y == food.Y)
                     {
                         eat();
                     }
                 }
                 else
                 {
-                    Snake[i].X = Snake[i - 1].X;
-                    Snake[i].Y = Snake[i - 1].Y;
+                    // wenn es keine Kollisionen gibt, bewegt die Schlange ubd ihre Teile weiter
+                    GreenSnake[i].X = GreenSnake[i - 1].X;
+                    GreenSnake[i].Y = GreenSnake[i - 1].Y;
                 }
             }
         }
@@ -224,23 +239,23 @@ namespace Game
                 return;
             }
 
-            for (int i = Snake2.Count - 1; i >= 0; i--)
+            for (int i = BlueSnake.Count - 1; i >= 0; i--)
             {
                 if (i == 0)
                 {
-                    switch (Settings.direction2)
+                    switch (Settings.directionBlueSnake)
                     {
                         case Directions.Right:
-                            Snake2[i].X++;
+                            BlueSnake[i].X++;
                             break;
                         case Directions.Left:
-                            Snake2[i].X--;
+                            BlueSnake[i].X--;
                             break;
                         case Directions.Up:
-                            Snake2[i].Y--;
+                            BlueSnake[i].Y--;
                             break;
                         case Directions.Down:
-                            Snake2[i].Y++;
+                            BlueSnake[i].Y++;
                             break;
                     }
 
@@ -248,30 +263,30 @@ namespace Game
                     int maxYpos = pbCanvas.Size.Height / Settings.Height;
 
                     if (
-                    Snake2[i].X < 0 || Snake2[i].Y < 0 ||
-                    Snake2[i].X > maxXpos || Snake2[i].Y > maxYpos
+                    BlueSnake[i].X < 0 || BlueSnake[i].Y < 0 ||
+                    BlueSnake[i].X > maxXpos || BlueSnake[i].Y > maxYpos
                     )
                     {
-                        Console.WriteLine("Collision with borders, snake2");
+                        Console.WriteLine("Collision with borders, BlueSnake");
                         die();
                     }
-                    for (int j = 1; j < Snake2.Count; j++)
+                    for (int j = 1; j < BlueSnake.Count; j++)
                     {
-                        if (Snake2[i].X == Snake2[j].X && Snake2[i].Y == Snake2[j].Y)
+                        if (BlueSnake[i].X == BlueSnake[j].X && BlueSnake[i].Y == BlueSnake[j].Y)
                         {
                             Console.WriteLine("Collision with body, snake 2");
                             die();
                         }
                     }
-                    if (Snake2[0].X == food.X && Snake2[0].Y == food.Y)
+                    if (BlueSnake[0].X == food.X && BlueSnake[0].Y == food.Y)
                     {
                         eat2();
                     }
                 }
                 else
                 {
-                    Snake2[i].X = Snake2[i - 1].X;
-                    Snake2[i].Y = Snake2[i - 1].Y;
+                    BlueSnake[i].X = BlueSnake[i - 1].X;
+                    BlueSnake[i].Y = BlueSnake[i - 1].Y;
                 }
             }
         }
@@ -286,44 +301,51 @@ namespace Game
         {
             Circle body = new Circle
             {
-                X = Snake[Snake.Count - 1].X,
-                Y = Snake[Snake.Count - 1].Y
+                X = GreenSnake[GreenSnake.Count - 1].X,
+                Y = GreenSnake[GreenSnake.Count - 1].Y
             };
 
-            Snake.Add(body);
+            GreenSnake.Add(body);
 
             Settings.Speed++;
             Settings.Player1Score += Settings.Points;
-            ScoreCount.Text = Settings.Player1Score.ToString();
+            ScoreCountGreen.Text = Settings.Player1Score.ToString();
             generateFood();
         }
         private void eat2()
         {
             Circle body2 = new Circle
             {
-                X = Snake2[Snake2.Count - 1].X,
-                Y = Snake2[Snake2.Count - 1].Y
+                X = BlueSnake[BlueSnake.Count - 1].X,
+                Y = BlueSnake[BlueSnake.Count - 1].Y
             };
 
-            Snake2.Add(body2);
+            BlueSnake.Add(body2);
 
             Settings.Speed++;
             Settings.Player2Score += Settings.Points;
-            ScoreCount2.Text = Settings.Player2Score.ToString();
+            ScoreCountBlue.Text = Settings.Player2Score.ToString();
             generateFood();
         }
         private void die()
         {
             Settings.GameOver = true;
         }
-        private void updateScreen(object sender, EventArgs e)
+        private void updateScreenSPMP(object sender, EventArgs e)
         {
+            // das ist die "timer-updateScreen" Funktion
+            // jedes tick führt diese Funktion aus
             if (Settings.GameOver == true)
             {
+                // wenn das Spiel vorbei ist nd der Spieler die Eingabetaste drückt
+                // starten wir die Spielfunktion
                 if (currentKeyPressedMainGamePage == (int)Keys.Enter)
                 {
                     startGame();
                 }
+                // wenn das Spiel nicht zu Ende ist, werden folgende Befehle ausgeführt
+                // unterhalb der Aktionen werden die "keys", die vom Spieler gedrückt werden, sondiert
+                // und bewegen sich entsprechend
                 else if (currentKeyPressedMainGamePage == (int)Keys.Escape)
                 {
                     tabController.SelectedTab = PlayerChoicePage;
@@ -333,30 +355,31 @@ namespace Game
             {
                 if (currentKeyPressedMainGamePage == (int)Keys.Right)
                 {
-                    Settings.direction = Directions.Right;
+                    Settings.directionGreenSnake = Directions.Right;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.Left)
                 {
-                    Settings.direction = Directions.Left;
+                    Settings.directionGreenSnake = Directions.Left;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.Up)
                 {
-                    Settings.direction = Directions.Up;
+                    Settings.directionGreenSnake = Directions.Up;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.Down)
                 {
-                    Settings.direction = Directions.Down;
+                    Settings.directionGreenSnake = Directions.Down;
                 }
-                movePlayer();
+                movePlayer1(); // ausführen "movePlayer"-Funktion
             }
-            pbCanvas.Invalidate();
+            pbCanvas.Invalidate(); // aktualisiert den "pictureBox" ("pbCanvas")
+                                   // und aktualisiert die "graphics" darauf
         }
-        private void updateScreen2(object sender, EventArgs e)
+        private void updateScreenSP(object sender, EventArgs e)
         {
             if (startedSP)
             {
-                ScoreLabel2.Visible = false;
-                ScoreCount2.Visible = false;
+                ScoreLabelBlue.Visible = false;
+                ScoreCountBlue.Visible = false;
                 FinalScoreBlueSnakeText.Visible = false;
             }
             else if (Settings.GameOver == true)
@@ -374,19 +397,19 @@ namespace Game
             {
                 if (currentKeyPressedMainGamePage == (int)Keys.D)
                 {
-                    Settings.direction2 = Directions.Right;
+                    Settings.directionBlueSnake = Directions.Right;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.A)
                 {
-                    Settings.direction2 = Directions.Left;
+                    Settings.directionBlueSnake = Directions.Left;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.W)
                 {
-                    Settings.direction2 = Directions.Up;
+                    Settings.directionBlueSnake = Directions.Up;
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.S)
                 {
-                    Settings.direction2 = Directions.Down;
+                    Settings.directionBlueSnake = Directions.Down;
                 }
                 movePlayer2();
             }
@@ -396,13 +419,13 @@ namespace Game
         {
             if (startedSP)
             {
-                updateScreen(sender, e);
+                updateScreenSPMP(sender, e);
                 currentKeyPressedMainGamePage = e.KeyValue;
             }
             else if (startedMP)
             {
-                updateScreen(sender, e);
-                updateScreen2(sender, e);
+                updateScreenSPMP(sender, e);
+                updateScreenSP(sender, e);
                 currentKeyPressedMainGamePage = e.KeyValue;
 
             }

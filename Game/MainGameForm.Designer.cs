@@ -34,18 +34,18 @@
             this.GameTitlePic = new System.Windows.Forms.PictureBox();
             this.startButton = new System.Windows.Forms.Button();
             this.PlayerChoicePage = new System.Windows.Forms.TabPage();
-            this.MultiplayerButton = new System.Windows.Forms.Button();
-            this.SinglePlayerButton = new System.Windows.Forms.Button();
+            this.multiplayerButton = new System.Windows.Forms.Button();
+            this.singlePlayerButton = new System.Windows.Forms.Button();
             this.PlayerChoices = new System.Windows.Forms.Label();
             this.SPAndMPGame = new System.Windows.Forms.TabPage();
             this.hamImage = new System.Windows.Forms.PictureBox();
             this.FinalScoreBlueSnakeText = new System.Windows.Forms.Label();
-            this.ScoreCount2 = new System.Windows.Forms.Label();
-            this.ScoreLabel2 = new System.Windows.Forms.Label();
+            this.ScoreCountBlue = new System.Windows.Forms.Label();
+            this.ScoreLabelBlue = new System.Windows.Forms.Label();
             this.FinalScoreGreenSnakeText = new System.Windows.Forms.Label();
             this.RestartGameText = new System.Windows.Forms.Label();
-            this.ScoreCount = new System.Windows.Forms.Label();
-            this.ScoreLabel = new System.Windows.Forms.Label();
+            this.ScoreCountGreen = new System.Windows.Forms.Label();
+            this.ScoreLabelGreen = new System.Windows.Forms.Label();
             this.GameOverText = new System.Windows.Forms.Label();
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
@@ -113,8 +113,8 @@
             // PlayerChoicePage
             // 
             this.PlayerChoicePage.BackColor = System.Drawing.Color.Black;
-            this.PlayerChoicePage.Controls.Add(this.MultiplayerButton);
-            this.PlayerChoicePage.Controls.Add(this.SinglePlayerButton);
+            this.PlayerChoicePage.Controls.Add(this.multiplayerButton);
+            this.PlayerChoicePage.Controls.Add(this.singlePlayerButton);
             this.PlayerChoicePage.Controls.Add(this.PlayerChoices);
             this.PlayerChoicePage.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.PlayerChoicePage.Location = new System.Drawing.Point(4, 25);
@@ -123,35 +123,35 @@
             this.PlayerChoicePage.TabIndex = 3;
             this.PlayerChoicePage.Text = "PlayerChoicePage";
             // 
-            // MultiplayerButton
+            // multiplayerButton
             // 
-            this.MultiplayerButton.BackColor = System.Drawing.Color.ForestGreen;
-            this.MultiplayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MultiplayerButton.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MultiplayerButton.ForeColor = System.Drawing.Color.Black;
-            this.MultiplayerButton.Location = new System.Drawing.Point(396, 552);
-            this.MultiplayerButton.Margin = new System.Windows.Forms.Padding(4);
-            this.MultiplayerButton.Name = "MultiplayerButton";
-            this.MultiplayerButton.Size = new System.Drawing.Size(408, 103);
-            this.MultiplayerButton.TabIndex = 7;
-            this.MultiplayerButton.Text = "Multiplayer";
-            this.MultiplayerButton.UseVisualStyleBackColor = false;
-            this.MultiplayerButton.Click += new System.EventHandler(this.MultiplayerButton_Click);
+            this.multiplayerButton.BackColor = System.Drawing.Color.ForestGreen;
+            this.multiplayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.multiplayerButton.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.multiplayerButton.ForeColor = System.Drawing.Color.Black;
+            this.multiplayerButton.Location = new System.Drawing.Point(396, 552);
+            this.multiplayerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.multiplayerButton.Name = "multiplayerButton";
+            this.multiplayerButton.Size = new System.Drawing.Size(408, 103);
+            this.multiplayerButton.TabIndex = 7;
+            this.multiplayerButton.Text = "Multiplayer";
+            this.multiplayerButton.UseVisualStyleBackColor = false;
+            this.multiplayerButton.Click += new System.EventHandler(this.multiplayerButton_Click);
             // 
-            // SinglePlayerButton
+            // singlePlayerButton
             // 
-            this.SinglePlayerButton.BackColor = System.Drawing.Color.ForestGreen;
-            this.SinglePlayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SinglePlayerButton.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SinglePlayerButton.ForeColor = System.Drawing.Color.Black;
-            this.SinglePlayerButton.Location = new System.Drawing.Point(396, 386);
-            this.SinglePlayerButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SinglePlayerButton.Name = "SinglePlayerButton";
-            this.SinglePlayerButton.Size = new System.Drawing.Size(408, 103);
-            this.SinglePlayerButton.TabIndex = 6;
-            this.SinglePlayerButton.Text = "Singleplayer";
-            this.SinglePlayerButton.UseVisualStyleBackColor = false;
-            this.SinglePlayerButton.Click += new System.EventHandler(this.SinglePlayerButton_Click);
+            this.singlePlayerButton.BackColor = System.Drawing.Color.ForestGreen;
+            this.singlePlayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.singlePlayerButton.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.singlePlayerButton.ForeColor = System.Drawing.Color.Black;
+            this.singlePlayerButton.Location = new System.Drawing.Point(396, 386);
+            this.singlePlayerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.singlePlayerButton.Name = "singlePlayerButton";
+            this.singlePlayerButton.Size = new System.Drawing.Size(408, 103);
+            this.singlePlayerButton.TabIndex = 6;
+            this.singlePlayerButton.Text = "Singleplayer";
+            this.singlePlayerButton.UseVisualStyleBackColor = false;
+            this.singlePlayerButton.Click += new System.EventHandler(this.singlePlayerButton_Click);
             // 
             // PlayerChoices
             // 
@@ -171,12 +171,12 @@
             this.SPAndMPGame.BackColor = System.Drawing.Color.Black;
             this.SPAndMPGame.Controls.Add(this.hamImage);
             this.SPAndMPGame.Controls.Add(this.FinalScoreBlueSnakeText);
-            this.SPAndMPGame.Controls.Add(this.ScoreCount2);
-            this.SPAndMPGame.Controls.Add(this.ScoreLabel2);
+            this.SPAndMPGame.Controls.Add(this.ScoreCountBlue);
+            this.SPAndMPGame.Controls.Add(this.ScoreLabelBlue);
             this.SPAndMPGame.Controls.Add(this.FinalScoreGreenSnakeText);
             this.SPAndMPGame.Controls.Add(this.RestartGameText);
-            this.SPAndMPGame.Controls.Add(this.ScoreCount);
-            this.SPAndMPGame.Controls.Add(this.ScoreLabel);
+            this.SPAndMPGame.Controls.Add(this.ScoreCountGreen);
+            this.SPAndMPGame.Controls.Add(this.ScoreLabelGreen);
             this.SPAndMPGame.Controls.Add(this.GameOverText);
             this.SPAndMPGame.Controls.Add(this.pbCanvas);
             this.SPAndMPGame.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -188,6 +188,7 @@
             // 
             // hamImage
             // 
+            this.hamImage.BackgroundImage = global::Game.Properties.Resources.HAM3;
             this.hamImage.Location = new System.Drawing.Point(594, 371);
             this.hamImage.Name = "hamImage";
             this.hamImage.Size = new System.Drawing.Size(66, 56);
@@ -206,27 +207,27 @@
             this.FinalScoreBlueSnakeText.Text = "BlueSnakeScore";
             this.FinalScoreBlueSnakeText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // ScoreCount2
+            // ScoreCountBlue
             // 
-            this.ScoreCount2.AutoSize = true;
-            this.ScoreCount2.Font = new System.Drawing.Font("Impact", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreCount2.ForeColor = System.Drawing.Color.Turquoise;
-            this.ScoreCount2.Location = new System.Drawing.Point(410, 84);
-            this.ScoreCount2.Name = "ScoreCount2";
-            this.ScoreCount2.Size = new System.Drawing.Size(45, 35);
-            this.ScoreCount2.TabIndex = 14;
-            this.ScoreCount2.Text = "00";
+            this.ScoreCountBlue.AutoSize = true;
+            this.ScoreCountBlue.Font = new System.Drawing.Font("Impact", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreCountBlue.ForeColor = System.Drawing.Color.Turquoise;
+            this.ScoreCountBlue.Location = new System.Drawing.Point(410, 84);
+            this.ScoreCountBlue.Name = "ScoreCountBlue";
+            this.ScoreCountBlue.Size = new System.Drawing.Size(45, 35);
+            this.ScoreCountBlue.TabIndex = 14;
+            this.ScoreCountBlue.Text = "00";
             // 
-            // ScoreLabel2
+            // ScoreLabelBlue
             // 
-            this.ScoreLabel2.AutoSize = true;
-            this.ScoreLabel2.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel2.ForeColor = System.Drawing.Color.Turquoise;
-            this.ScoreLabel2.Location = new System.Drawing.Point(125, 80);
-            this.ScoreLabel2.Name = "ScoreLabel2";
-            this.ScoreLabel2.Size = new System.Drawing.Size(232, 37);
-            this.ScoreLabel2.TabIndex = 13;
-            this.ScoreLabel2.Text = "BlueSnake Score:";
+            this.ScoreLabelBlue.AutoSize = true;
+            this.ScoreLabelBlue.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabelBlue.ForeColor = System.Drawing.Color.Turquoise;
+            this.ScoreLabelBlue.Location = new System.Drawing.Point(125, 80);
+            this.ScoreLabelBlue.Name = "ScoreLabelBlue";
+            this.ScoreLabelBlue.Size = new System.Drawing.Size(232, 37);
+            this.ScoreLabelBlue.TabIndex = 13;
+            this.ScoreLabelBlue.Text = "BlueSnake Score:";
             // 
             // FinalScoreGreenSnakeText
             // 
@@ -252,27 +253,27 @@
             this.RestartGameText.Text = "Restart";
             this.RestartGameText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // ScoreCount
+            // ScoreCountGreen
             // 
-            this.ScoreCount.AutoSize = true;
-            this.ScoreCount.Font = new System.Drawing.Font("Impact", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreCount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.ScoreCount.Location = new System.Drawing.Point(1018, 84);
-            this.ScoreCount.Name = "ScoreCount";
-            this.ScoreCount.Size = new System.Drawing.Size(45, 35);
-            this.ScoreCount.TabIndex = 10;
-            this.ScoreCount.Text = "00";
+            this.ScoreCountGreen.AutoSize = true;
+            this.ScoreCountGreen.Font = new System.Drawing.Font("Impact", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreCountGreen.ForeColor = System.Drawing.Color.ForestGreen;
+            this.ScoreCountGreen.Location = new System.Drawing.Point(1018, 84);
+            this.ScoreCountGreen.Name = "ScoreCountGreen";
+            this.ScoreCountGreen.Size = new System.Drawing.Size(45, 35);
+            this.ScoreCountGreen.TabIndex = 10;
+            this.ScoreCountGreen.Text = "00";
             // 
-            // ScoreLabel
+            // ScoreLabelGreen
             // 
-            this.ScoreLabel.AutoSize = true;
-            this.ScoreLabel.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.ScoreLabel.Location = new System.Drawing.Point(699, 81);
-            this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(250, 37);
-            this.ScoreLabel.TabIndex = 9;
-            this.ScoreLabel.Text = "GreenSnake Score:";
+            this.ScoreLabelGreen.AutoSize = true;
+            this.ScoreLabelGreen.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabelGreen.ForeColor = System.Drawing.Color.ForestGreen;
+            this.ScoreLabelGreen.Location = new System.Drawing.Point(699, 81);
+            this.ScoreLabelGreen.Name = "ScoreLabelGreen";
+            this.ScoreLabelGreen.Size = new System.Drawing.Size(250, 37);
+            this.ScoreLabelGreen.TabIndex = 9;
+            this.ScoreLabelGreen.Text = "GreenSnake Score:";
             // 
             // GameOverText
             // 
@@ -330,15 +331,15 @@
         private System.Windows.Forms.TabPage SPAndMPGame;
         private System.Windows.Forms.Label GameOverText;
         private System.Windows.Forms.PictureBox pbCanvas;
-        private System.Windows.Forms.Label ScoreLabel;
-        private System.Windows.Forms.Label ScoreCount;
+        private System.Windows.Forms.Label ScoreLabelGreen;
+        private System.Windows.Forms.Label ScoreCountGreen;
         private System.Windows.Forms.Label RestartGameText;
         private System.Windows.Forms.Label FinalScoreGreenSnakeText;
-        private System.Windows.Forms.Label ScoreCount2;
-        private System.Windows.Forms.Label ScoreLabel2;
+        private System.Windows.Forms.Label ScoreCountBlue;
+        private System.Windows.Forms.Label ScoreLabelBlue;
         private System.Windows.Forms.TabPage PlayerChoicePage;
-        private System.Windows.Forms.Button MultiplayerButton;
-        private System.Windows.Forms.Button SinglePlayerButton;
+        private System.Windows.Forms.Button multiplayerButton;
+        private System.Windows.Forms.Button singlePlayerButton;
         private System.Windows.Forms.Label PlayerChoices;
         private System.Windows.Forms.PictureBox GameTitlePic;
         private System.Windows.Forms.Label FinalScoreBlueSnakeText;
