@@ -51,6 +51,11 @@ namespace Game
             tabController.SelectedTab = SPAndMPGame; // nach klicken der "SinglePlayerButton" wird
                                                     // die "Multiplayer" Seite geöffnet
         }
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.Show();
+        }
         private void updateGraphics(object sender, PaintEventArgs e)
         {
             // Bewegung der Schlange und ihre Teile
@@ -176,60 +181,65 @@ namespace Game
             // die Hauptschleife für Schlangenkop und-teile
             for (int i = GreenSnake.Count - 1; i >= 0; i--)
             {
-                // wenn der Schlangenkopf aktiv ist
-                if (i == 0)
+                try
                 {
-                    // den Rest des Körpers bewegen, je nachdem, in welche Richting sich der Kopf bewegt
-                    switch (Settings.directionGreenSnake)
+                    // wenn der Schlangenkopf aktiv ist
+                    if (i == 0)
                     {
-                        case Directions.Right:
-                            GreenSnake[i].X++;
-                            break;
-                        case Directions.Left:
-                            GreenSnake[i].X--;
-                            break;
-                        case Directions.Up:
-                            GreenSnake[i].Y--;
-                            break;
-                        case Directions.Down:
-                            GreenSnake[i].Y++;
-                            break;
-                    }
-                    // die Schlange davon abhalen, die "Canvas" zu verlassen
-                    int maxXpos = pbCanvas.Size.Width / Settings.Width;
-                    int maxYpos = pbCanvas.Size.Height / Settings.Height;
-
-                    if (
-                    GreenSnake[i].X < 0 || GreenSnake[i].Y < 0 ||
-                    GreenSnake[i].X > maxXpos || GreenSnake[i].Y > maxYpos
-                    )
-                    {
-                        // Ende des Spiels ist Schlage erreicht entweder Kante der "Canvas"
-                        Console.WriteLine("Collision with border, GreenSnake");
-                        die();
-                    }
-                    // Kollision mit dem Körper erkennen
-                    // diese Schleife prüft, ob die Schlange eine Kollision mit anderen Körperteilen hatte
-                    for (int j = 1; j < GreenSnake.Count; j++)
-                    {
-                        if (GreenSnake[i].X == GreenSnake[j].X && GreenSnake[i].Y == GreenSnake[j].Y)
+                        // den Rest des Körpers bewegen, je nachdem, in welche Richting sich der Kopf bewegt
+                        switch (Settings.directionGreenSnake)
                         {
-                            // wenn ja, wird die Funktion "die()" gestartet
-                            Console.WriteLine("Collision with body");
+                            case Directions.Right:
+                                GreenSnake[i].X++;
+                                break;
+                            case Directions.Left:
+                                GreenSnake[i].X--;
+                                break;
+                            case Directions.Up:
+                                GreenSnake[i].Y--;
+                                break;
+                            case Directions.Down:
+                                GreenSnake[i].Y++;
+                                break;
+                        }
+                        // die Schlange davon abhalen, die "Canvas" zu verlassen
+                        int maxXpos = pbCanvas.Size.Width / Settings.Width;
+                        int maxYpos = pbCanvas.Size.Height / Settings.Height;
+
+                        if (GreenSnake[i].X < 0 || GreenSnake[i].Y < 0 || GreenSnake[i].X > maxXpos || GreenSnake[i].Y > maxYpos)
+                        {
+                            // Ende des Spiels ist Schlage erreicht entweder Kante der "Canvas"
+                            Console.WriteLine("Collision with border, GreenSnake");
                             die();
                         }
+                        // Kollision mit dem Körper erkennen
+                        // diese Schleife prüft, ob die Schlange eine Kollision mit anderen Körperteilen hatte
+                        for (int j = 1; j < GreenSnake.Count; j++)
+                        {
+                            if (GreenSnake[i].X == GreenSnake[j].X && GreenSnake[i].Y == GreenSnake[j].Y)
+                            {
+                                // wenn ja, wird die Funktion "die()" gestartet
+                                Console.WriteLine("Collision with body");
+                                die();
+                            }
+                        }
+
+                        // KOllision zwischen Schlangenkopf und "food" erkennen
+                        if (GreenSnake[0].X == food.X && GreenSnake[0].Y == food.Y)
+                        {
+                            eat();
+                        }
                     }
-                    // KOllision zwischen Schlangenkopf und "food" erkennen
-                    if (GreenSnake[0].X == food.X && GreenSnake[0].Y == food.Y)
+                    else
                     {
-                        eat();
+                        // wenn es keine Kollisionen gibt, bewegt die Schlange und ihre Teile weiter
+                        GreenSnake[i].X = GreenSnake[i - 1].X;
+                        GreenSnake[i].Y = GreenSnake[i - 1].Y;
                     }
                 }
-                else
+                catch
                 {
-                    // wenn es keine Kollisionen gibt, bewegt die Schlange ubd ihre Teile weiter
-                    GreenSnake[i].X = GreenSnake[i - 1].X;
-                    GreenSnake[i].Y = GreenSnake[i - 1].Y;
+                    Console.WriteLine("BlueSnake can't move");
                 }
             }
         }
@@ -242,53 +252,61 @@ namespace Game
 
             for (int i = BlueSnake.Count - 1; i >= 0; i--)
             {
-                if (i == 0)
+                try
                 {
-                    switch (Settings.directionBlueSnake)
+                    if (i == 0)
                     {
-                        case Directions.Right:
-                            BlueSnake[i].X++;
-                            break;
-                        case Directions.Left:
-                            BlueSnake[i].X--;
-                            break;
-                        case Directions.Up:
-                            BlueSnake[i].Y--;
-                            break;
-                        case Directions.Down:
-                            BlueSnake[i].Y++;
-                            break;
-                    }
-
-                    int maxXpos = pbCanvas.Size.Width / Settings.Width;
-                    int maxYpos = pbCanvas.Size.Height / Settings.Height;
-
-                    if (
-                    BlueSnake[i].X < 0 || BlueSnake[i].Y < 0 ||
-                    BlueSnake[i].X > maxXpos || BlueSnake[i].Y > maxYpos
-                    )
-                    {
-                        Console.WriteLine("Collision with borders, BlueSnake");
-                        die();
-                    }
-                    for (int j = 1; j < BlueSnake.Count; j++)
-                    {
-                        if (BlueSnake[i].X == BlueSnake[j].X && BlueSnake[i].Y == BlueSnake[j].Y)
+                        switch (Settings.directionBlueSnake)
                         {
-                            Console.WriteLine("Collision with body, snake 2");
+                            case Directions.Right:
+                                BlueSnake[i].X++;
+                                break;
+                            case Directions.Left:
+                                BlueSnake[i].X--;
+                                break;
+                            case Directions.Up:
+                                BlueSnake[i].Y--;
+                                break;
+                            case Directions.Down:
+                                BlueSnake[i].Y++;
+                                break;
+                        }
+
+                        int maxXpos = pbCanvas.Size.Width / Settings.Width;
+                        int maxYpos = pbCanvas.Size.Height / Settings.Height;
+
+                        if (
+                        BlueSnake[i].X < 0 || BlueSnake[i].Y < 0 ||
+                        BlueSnake[i].X > maxXpos || BlueSnake[i].Y > maxYpos
+                        )
+                        {
+                            Console.WriteLine("Collision with borders, BlueSnake");
                             die();
                         }
+                        for (int j = 1; j < BlueSnake.Count; j++)
+                        {
+                            if (BlueSnake[i].X == BlueSnake[j].X && BlueSnake[i].Y == BlueSnake[j].Y)
+                            {
+                                Console.WriteLine("Collision with body, snake 2");
+                                die();
+                            }
+                        }
+                        if (BlueSnake[0].X == food.X && BlueSnake[0].Y == food.Y)
+                        {
+                            eat2();
+                        }
                     }
-                    if (BlueSnake[0].X == food.X && BlueSnake[0].Y == food.Y)
+                    else
                     {
-                        eat2();
+                        BlueSnake[i].X = BlueSnake[i - 1].X;
+                        BlueSnake[i].Y = BlueSnake[i - 1].Y;
                     }
                 }
-                else
+                catch
                 {
-                    BlueSnake[i].X = BlueSnake[i - 1].X;
-                    BlueSnake[i].Y = BlueSnake[i - 1].Y;
+                    Console.WriteLine("GreenSnake can't move");
                 }
+
             }
         }
 
@@ -435,12 +453,6 @@ namespace Game
 
             }
             e.Handled = true;
-        }
-
-        private void HelpButton_Click(object sender, EventArgs e)
-        {
-            HelpForm helpForm = new HelpForm();
-            helpForm.Show();
         }
     }
 }

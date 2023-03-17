@@ -34,6 +34,7 @@
             this.GameTitlePic = new System.Windows.Forms.PictureBox();
             this.startButton = new System.Windows.Forms.Button();
             this.PlayerChoicePage = new System.Windows.Forms.TabPage();
+            this.helpButton = new System.Windows.Forms.Button();
             this.multiplayerButton = new System.Windows.Forms.Button();
             this.singlePlayerButton = new System.Windows.Forms.Button();
             this.PlayerChoices = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.GameOverText = new System.Windows.Forms.Label();
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.HelpButton = new System.Windows.Forms.Button();
             this.tabController.SuspendLayout();
             this.StartPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).BeginInit();
@@ -115,7 +115,7 @@
             // PlayerChoicePage
             // 
             this.PlayerChoicePage.BackColor = System.Drawing.Color.Black;
-            this.PlayerChoicePage.Controls.Add(this.HelpButton);
+            this.PlayerChoicePage.Controls.Add(this.helpButton);
             this.PlayerChoicePage.Controls.Add(this.multiplayerButton);
             this.PlayerChoicePage.Controls.Add(this.singlePlayerButton);
             this.PlayerChoicePage.Controls.Add(this.PlayerChoices);
@@ -125,6 +125,21 @@
             this.PlayerChoicePage.Size = new System.Drawing.Size(1204, 846);
             this.PlayerChoicePage.TabIndex = 3;
             this.PlayerChoicePage.Text = "PlayerChoicePage";
+            // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.Color.Black;
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.helpButton.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpButton.ForeColor = System.Drawing.Color.ForestGreen;
+            this.helpButton.Location = new System.Drawing.Point(490, 713);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(4);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(212, 71);
+            this.helpButton.TabIndex = 8;
+            this.helpButton.Text = "Help";
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // multiplayerButton
             // 
@@ -192,9 +207,11 @@
             // hamImage
             // 
             this.hamImage.BackgroundImage = global::Game.Properties.Resources.HAM3;
-            this.hamImage.Location = new System.Drawing.Point(470, 356);
+            this.hamImage.InitialImage = global::Game.Properties.Resources.HAM3;
+            this.hamImage.Location = new System.Drawing.Point(211, 181);
             this.hamImage.Name = "hamImage";
-            this.hamImage.Size = new System.Drawing.Size(86, 62);
+            this.hamImage.Size = new System.Drawing.Size(88, 63);
+            this.hamImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.hamImage.TabIndex = 16;
             this.hamImage.TabStop = false;
             // 
@@ -303,21 +320,6 @@
             this.pbCanvas.TabStop = false;
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
-            // HelpButton
-            // 
-            this.HelpButton.BackColor = System.Drawing.Color.Black;
-            this.HelpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.HelpButton.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HelpButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.HelpButton.Location = new System.Drawing.Point(490, 713);
-            this.HelpButton.Margin = new System.Windows.Forms.Padding(4);
-            this.HelpButton.Name = "HelpButton";
-            this.HelpButton.Size = new System.Drawing.Size(212, 71);
-            this.HelpButton.TabIndex = 8;
-            this.HelpButton.Text = "Help";
-            this.HelpButton.UseVisualStyleBackColor = false;
-            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
-            // 
             // MainGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,6 +366,6 @@
         private System.Windows.Forms.PictureBox GameTitlePic;
         private System.Windows.Forms.Label FinalScoreBlueSnakeText;
         private System.Windows.Forms.PictureBox hamImage;
-        private System.Windows.Forms.Button HelpButton;
+        private System.Windows.Forms.Button helpButton;
     }
 }
