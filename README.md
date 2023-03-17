@@ -44,13 +44,21 @@ Diese Form-Klasse beeinhatet die ganze Gamelogik. Die „MainGameForm“ (Window
     - Erstellung der „Singleplayer- und Multiplayermodus" mit WASD und Arrow Keys
 
 # Vorgangsliste
+	- Skizze anfertigen für die Screens
+	- Überlegung Konsolen- oder Gui-basierend programmieren
+	- Entschieden zu Objektorientierte Programmierung (OOP)
+	- Windowsforms erstellt
+	- Ereignisse erstellt
+	- Klassen erstellt
+	- Backend programmiert
+	- Singleplayer- und Multiplayermodus
+	- Name für das Spiel erfunden und logo erstellt
+	- Windowsforms gestaltet
 
 # Zeitplan (Milestones)
-
-	wie viel Zeit für:
-		Struktogramme
-		Coden
-		Dokumentation erstellen
-		Präsentation erstellen
+	30min	2 UML-Diagramme erstellen
+	20h	Coden
+	4h	Dokumentation erstellen
+	2h	Präsentation erstellen
 
 # Diskussion/Fazit
