@@ -49,6 +49,7 @@
             this.GameOverText = new System.Windows.Forms.Label();
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.HelpButton = new System.Windows.Forms.Button();
             this.tabController.SuspendLayout();
             this.StartPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).BeginInit();
@@ -89,9 +90,10 @@
             this.GameTitlePic.BackColor = System.Drawing.Color.Transparent;
             this.GameTitlePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GameTitlePic.Image = global::Game.Properties.Resources.logo3;
-            this.GameTitlePic.Location = new System.Drawing.Point(154, 128);
+            this.GameTitlePic.Location = new System.Drawing.Point(155, 118);
             this.GameTitlePic.Name = "GameTitlePic";
-            this.GameTitlePic.Size = new System.Drawing.Size(819, 380);
+            this.GameTitlePic.Size = new System.Drawing.Size(886, 383);
+            this.GameTitlePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.GameTitlePic.TabIndex = 5;
             this.GameTitlePic.TabStop = false;
             // 
@@ -113,6 +115,7 @@
             // PlayerChoicePage
             // 
             this.PlayerChoicePage.BackColor = System.Drawing.Color.Black;
+            this.PlayerChoicePage.Controls.Add(this.HelpButton);
             this.PlayerChoicePage.Controls.Add(this.multiplayerButton);
             this.PlayerChoicePage.Controls.Add(this.singlePlayerButton);
             this.PlayerChoicePage.Controls.Add(this.PlayerChoices);
@@ -189,9 +192,9 @@
             // hamImage
             // 
             this.hamImage.BackgroundImage = global::Game.Properties.Resources.HAM3;
-            this.hamImage.Location = new System.Drawing.Point(594, 371);
+            this.hamImage.Location = new System.Drawing.Point(470, 356);
             this.hamImage.Name = "hamImage";
-            this.hamImage.Size = new System.Drawing.Size(66, 56);
+            this.hamImage.Size = new System.Drawing.Size(86, 62);
             this.hamImage.TabIndex = 16;
             this.hamImage.TabStop = false;
             // 
@@ -300,6 +303,21 @@
             this.pbCanvas.TabStop = false;
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.updateGraphics);
             // 
+            // HelpButton
+            // 
+            this.HelpButton.BackColor = System.Drawing.Color.Black;
+            this.HelpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HelpButton.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HelpButton.ForeColor = System.Drawing.Color.ForestGreen;
+            this.HelpButton.Location = new System.Drawing.Point(490, 713);
+            this.HelpButton.Margin = new System.Windows.Forms.Padding(4);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(212, 71);
+            this.HelpButton.TabIndex = 8;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = false;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
+            // 
             // MainGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,8 +325,10 @@
             this.ClientSize = new System.Drawing.Size(1206, 809);
             this.Controls.Add(this.tabController);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1224, 856);
             this.Name = "MainGameForm";
             this.Text = "StartScreen";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.tabController.ResumeLayout(false);
             this.StartPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).EndInit();
@@ -344,5 +364,6 @@
         private System.Windows.Forms.PictureBox GameTitlePic;
         private System.Windows.Forms.Label FinalScoreBlueSnakeText;
         private System.Windows.Forms.PictureBox hamImage;
+        private System.Windows.Forms.Button HelpButton;
     }
 }
