@@ -19,6 +19,7 @@ namespace Game
 
         Boolean startedMP = false;
         Boolean startedSP = false;
+
         int currentKeyPressedMainGamePage = -1;
         public MainGameForm()
         {
@@ -42,13 +43,13 @@ namespace Game
         {
             startedSP = true;
             tabController.SelectedTab = SPAndMPGame; // nach klicken der "SinglePlayerButton" wird
-                                                     // die "Singleplayer" Seite geöffnet
+                                                // die "Singleplayer" Seite geöffnet
         }
         private void multiplayerButton_Click(object sender, EventArgs e)
         {
             startedMP = true;
             tabController.SelectedTab = SPAndMPGame; // nach klicken der "SinglePlayerButton" wird
-                                                     // die "Multiplayer" Seite geöffnet
+                                                    // die "Multiplayer" Seite geöffnet
         }
         private void updateGraphics(object sender, PaintEventArgs e)
         {
@@ -290,6 +291,7 @@ namespace Game
                 }
             }
         }
+
         private void generateFood()
         {
             int maxXpos = pbCanvas.Size.Width / Settings.Width;
@@ -349,6 +351,8 @@ namespace Game
                 else if (currentKeyPressedMainGamePage == (int)Keys.Escape)
                 {
                     tabController.SelectedTab = PlayerChoicePage;
+                    startedSP = false;
+                    startGame();
                 }
             }
             else if (currentKeyPressedMainGamePage != -1)
@@ -391,6 +395,7 @@ namespace Game
                 else if (currentKeyPressedMainGamePage == (int)Keys.Escape)
                 {
                     tabController.SelectedTab = PlayerChoicePage;
+                    startGame();
                 }
             }
             else if (currentKeyPressedMainGamePage != -1)
@@ -430,6 +435,12 @@ namespace Game
 
             }
             e.Handled = true;
+        }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.Show();
         }
     }
 }
