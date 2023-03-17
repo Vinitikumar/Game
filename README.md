@@ -23,6 +23,7 @@ Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins
 # Beschreibung der Funktionalität 
 
 Klassen (.cs):
+
 -> Program.cs       
 Die Program-Klasse ist die Haupteinstiegspunkt für die Anwendung und startet mit der main()-Methode das Programm bzw. Applikation/ Anwendung.
 
