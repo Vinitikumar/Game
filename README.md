@@ -1,16 +1,20 @@
-﻿# Game
+﻿# HAM Game („Snake Game")
 
 # Motivation
-Bei meiner Wahl der Entscheidung, welches Spiel ich nachbauen würde, half mir der Rückblick wie ich damals an einem alten NOKIA Smartphone, diesen „Snake Game" gespielt hatte. Welches durch viele verschiedene Iterationen im Laufe der Jahre ging, aber das Spiel ist immer noch eine Menge Spaß. Somit erstellte ich das „Snake Game" in Visual Studio mit der Windows Form Application Vorlage. Und kam auf den Namen „HAM" für das „Snake Game". „HAM" übersetzt auf Englisch heißt Schinken, worauf ich mit meinen Klassenkameraden auf die Idee kam, anstatt einem normalen obst, was die Schlange fressen würde, das Schinken zu nehmen. Ebenfalls hab ich mich für eine Multiplayermodus entschieden, was der klassische „SnakeGame" nicht hatte.
+Bei meiner Wahl der Entscheidung, welches Spiel ich nachbauen würde, half mir der Rückblick wie ich damals an einem alten NOKIA Smartphone, diesen „Snake Game" gespielt hatte. Welches durch viele verschiedene Iterationen im Laufe der Jahre ging, aber das Spiel ist immer noch eine Menge Spaß. Somit erstellte ich das CSnake Game" in Visual Studio mit der Windows Form Application Vorlage. Und kam auf den Namen „HAM" für das „Snake Game". „HAM" übersetzt auf Englisch heißt Schinken, worauf ich mit meinen Klassenkameraden auf die Idee kam, anstatt einem normalen obst, was die Schlange fressen würde, das Schinken zu nehmen. Ebenfalls hab ich mich für eine Multiplayermodus entschieden, was der klassische „SnakeGame" nicht hatte.
 
 # Projektstrukturplan
-Das Projekt besteht aus zwei Windows Formen, einer „TabControl“ und aus vielen Klassen, die dynamisch importiert oder aus dem Spiel entfernt werden können. Durch die Klassen ist die Programmierung einfacher zu unterteilen, so dass wir nicht alles in einer Datei codieren müssen. Die zwei Windows Formen sind „MainGameForm“ und „HelpForm“. Der „MainGameForm“ enthält auch den „TabControl“, der wiederum mit 3 Tabs sich befasst. Der erste Tab ist die Startseite mit dem Startbutton. Der zweite Tab ist die Spieler Auswahlseite, die durch das Drücken der Startbutton gewechselt wird. Auf der Seite sind zwei weiter Buttons, mit dem du den Einzelspieler oder Multispieler auswählen kannst, die dann zu dem dritten Tab führt. Die dritten Tabs ist die Spielseite, die sich durch den Spielermodus variiert. Auf der Auswahlseite gibt es ein weiterer Button namens „Help“, welches dann eine erneute Form („HelpForm“) öffnet. Dieser Form beinhaltet die Anleitung zu dem Spiel, die vor dem Spiel gelesen werden sollte.
+Das Projekt besteht aus zwei Windows Formen, einer „TabControl“ und aus vielen Klassen, die dynamisch importiert oder aus dem Spiel entfernt werden können. Durch die Klassen ist die Programmierung einfacher zu unterteilen, so dass wir nicht alles in einer Datei codieren müssen. Die zwei Windows Formen sind „MainGameForm“ und „HelpForm“. Der „MainGameForm“ enthält auch den „TabControl“, der wiederum mit 3 Tabs sich befasst. Der erste Tab ist die Startseite mit dem Startbutton. Der zweite Tab ist die Spieler Auswahlseite, die durch das Drücken der Startbutton gewechselt wird. Auf der Seite sind zwei weiter Buttons, mit dem du den Einzelspieler oder Multispieler auswählen kannst, die dann zu dem dritten Tab führt. Die dritten Tabs ist die Spielseite, die sich durch den Spielermodus variiert. Ebenfalls ist es möglich das Spiel mit der "Enter-Key" erneut zu starten und mit der „esc-Key" ist es möglich vom GameTab zur Auswahlseite zu wechseln. Auf der Auswahlseite gibt es ein weiterer Button namens „Help“, welches dann eine erneute Form („HelpForm“) öffnet. Dieser Form beinhaltet die Anleitung zu dem Spiel, die vor dem Spiel gelesen werden sollte. 
+
+Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins
 
 ![image](https://user-images.githubusercontent.com/94457045/226036395-4e8fd28f-a99f-48c4-b328-32b51fbac66d.png)
+![image](https://user-images.githubusercontent.com/94457045/226037062-adf2e4c4-957d-4a05-9d2a-50f9d06313c2.png)
+![image](https://user-images.githubusercontent.com/94457045/226039202-fe8a547b-ec7c-4f16-91e3-9abccac5e4de.png)
+![image](https://user-images.githubusercontent.com/94457045/226039362-4910d264-b5af-4c36-97e5-43769fdefc32.png)
+![image](https://user-images.githubusercontent.com/94457045/226040950-ae5c04e0-b715-406e-8e22-a664f6c2b8a2.png)
+![image](https://user-images.githubusercontent.com/94457045/226041050-db943f57-2459-4ca3-9ef6-bbf89402aed3.png)
 
-	- Identifizierung der einzelnen Komponenten (screens, buttons, Spieler/Spielfiguren)
-
-	- die Codierung beeinhaltet Kommentare für einen besseren Verständins
 	
 # Anstatt 2 Struktogramme von Methoden -> 2 UML-Diagramme von 2 Klassen
 
