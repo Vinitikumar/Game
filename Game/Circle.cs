@@ -13,7 +13,7 @@ namespace Game
 
         public Circle()
         {
-            // diese Funktion setzt x und y auf 0 zurück
+            // diese Funktion setzt X und Y auf 0 zurück
             X = 0;
             Y = 0;
         }

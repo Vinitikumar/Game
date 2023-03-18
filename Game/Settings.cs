@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Game
 {
     // dies ist ein Enum-Klasse namens "Directions"
-    // wir verwenden "enum", weil es einfacher ist, die Richtungen zu klassifizieren
-    // für das Spiel
+    // Verwendung des "enum", weil es einfacher ist, die Richtungen zu klassifizieren für das Spiel
     public enum Directions
     {
         Left,
@@ -29,7 +28,7 @@ namespace Game
         public static Directions directionGreenSnake { get; set; }
         public static Directions directionBlueSnake { get; set; }
 
-        // das ist die Default-"Settingsfunction"
+        // das ist die Default-"Settingsmethode"
         public Settings()
         {
             Width = 16; 
