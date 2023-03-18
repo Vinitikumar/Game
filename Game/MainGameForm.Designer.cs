@@ -264,7 +264,7 @@
             this.ScoreCountGreen.AutoSize = true;
             this.ScoreCountGreen.Font = new System.Drawing.Font("Impact", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreCountGreen.ForeColor = System.Drawing.Color.ForestGreen;
-            this.ScoreCountGreen.Location = new System.Drawing.Point(1018, 84);
+            this.ScoreCountGreen.Location = new System.Drawing.Point(1007, 85);
             this.ScoreCountGreen.Name = "ScoreCountGreen";
             this.ScoreCountGreen.Size = new System.Drawing.Size(45, 35);
             this.ScoreCountGreen.TabIndex = 10;
@@ -275,7 +275,7 @@
             this.ScoreLabelGreen.AutoSize = true;
             this.ScoreLabelGreen.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreLabelGreen.ForeColor = System.Drawing.Color.ForestGreen;
-            this.ScoreLabelGreen.Location = new System.Drawing.Point(699, 81);
+            this.ScoreLabelGreen.Location = new System.Drawing.Point(688, 82);
             this.ScoreLabelGreen.Name = "ScoreLabelGreen";
             this.ScoreLabelGreen.Size = new System.Drawing.Size(250, 37);
             this.ScoreLabelGreen.TabIndex = 9;

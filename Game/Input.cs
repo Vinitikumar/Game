@@ -11,21 +11,21 @@ namespace Game
     class Input
     {
         private static Hashtable keyTable = new Hashtable();
-        // wir erstellen eine neue Instanz der Hastable-Klasse
-        // diese Klasse wird verwendet, um die darin eingefügten Tasten zu optimieren
-        public static bool KeyPress(Keys key)
+        // Erstellung einer neue Instanz der Hashtable-Klasse
+        // diese Klasse wird verwendet, um die darin eingefügten "Keys" zu optimieren
+        public static bool keyPress(Keys key)
         {
             // diese Funktion gibt einen Schlüssel zurück zur Klasse
             if (keyTable[key] == null)
             {
-                return false; // wenn die Hashtabelle leer ist, geben wir "false" zurück
+                return false; // wenn die Hashtabelle leer ist, wird "false" zurückgegeben
             }
             return (bool)keyTable[key];
         }
 
         public static void changeState(Keys key, bool state)
         {
-            // diese Funktion ändert den Zusatnd der Tasten und das Players damit 
+            // diese Funktion ändert den Zustand der "Keys" und der Spieler1/ Spieler2 damit 
             // diese Funktion hat zwei Argumente "Key" und "state"
             keyTable[key] = state;
         }
