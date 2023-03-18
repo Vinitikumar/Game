@@ -220,6 +220,7 @@ namespace Game
                             // Ende des Spiels ist Schlage erreicht entweder Kante der "Canvas"
                             Console.WriteLine("Collision with border, GreenSnake");
                             die();
+                            Console.WriteLine("Game over");
                         }
                         // diese Schleife prüft, ob die Schlange eine Kollision mit anderen Körperteilen hatte
                         for (int j = 1; j < GreenSnake.Count; j++)
@@ -229,6 +230,7 @@ namespace Game
                                 // wenn ja, wird die Methode "die()" gestartet
                                 Console.WriteLine("Collision with body");
                                 die();
+                                Console.WriteLine("Game over");
                             }
                         }
 
@@ -237,6 +239,7 @@ namespace Game
                         if (GreenSnake[0].X == food.X && GreenSnake[0].Y == food.Y)
                         {
                             eat();
+                            Console.WriteLine("GreenSnake eats food");
                         }
                     }
                     else
@@ -294,6 +297,7 @@ namespace Game
                         {
                             Console.WriteLine("Collision with borders, BlueSnake");
                             die();
+                            Console.WriteLine("Game over");
                         }
                         for (int j = 1; j < BlueSnake.Count; j++)
                         {
@@ -301,11 +305,13 @@ namespace Game
                             {
                                 Console.WriteLine("Collision with body, snake 2");
                                 die();
+                                Console.WriteLine("Game over");
                             }
                         }
                         if (BlueSnake[0].X == food.X && BlueSnake[0].Y == food.Y)
                         {
                             eat2();
+                            Console.WriteLine("GreenSnake eats food");
                         }
                     }
                     else
@@ -381,6 +387,7 @@ namespace Game
                 if (currentKeyPressedMainGamePage == (int)Keys.Enter)
                 {
                     startGame();
+                    Console.WriteLine("Game started");
                 }
                 // wenn das Spiel nicht zu Ende ist, werden folgende Befehle ausgeführt
                 // unterhalb der Aktionen werden die "keys", die vom Spieler gedrückt werden, sondiert
@@ -390,6 +397,7 @@ namespace Game
                     tabController.SelectedTab = PlayerChoicePage;
                     startedSP = false;
                     startGame();
+                    Console.WriteLine("Game started");
                 }
                 // Vorgang für "Arrow keys"
             }
@@ -398,18 +406,22 @@ namespace Game
                 if (currentKeyPressedMainGamePage == (int)Keys.Right)
                 {
                     Settings.directionGreenSnake = Directions.Right;
+                    Console.WriteLine("GreenSnake moves to the right");
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.Left)
                 {
                     Settings.directionGreenSnake = Directions.Left;
+                    Console.WriteLine("GreenSnake moves to the left");
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.Up)
                 {
                     Settings.directionGreenSnake = Directions.Up;
+                    Console.WriteLine("GreenSnake moves to the upside");
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.Down)
                 {
                     Settings.directionGreenSnake = Directions.Down;
+                    Console.WriteLine("GreenSnake moves downside");
                 }
                 movePlayer1(); // ausführen "movePlayer"-Methode
             }
@@ -433,11 +445,13 @@ namespace Game
                 if (currentKeyPressedMainGamePage == (int)Keys.Enter)
                 {
                     startGame();
+                    Console.WriteLine("Game started");
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.Escape)
                 {
                     tabController.SelectedTab = PlayerChoicePage;
                     startGame();
+                    Console.WriteLine("Game started");
                 }
             }
             else if (currentKeyPressedMainGamePage != -1)
@@ -445,18 +459,22 @@ namespace Game
                 if (currentKeyPressedMainGamePage == (int)Keys.D)
                 {
                     Settings.directionBlueSnake = Directions.Right;
+                    Console.WriteLine("BlueSnake moves to the right");
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.A)
                 {
                     Settings.directionBlueSnake = Directions.Left;
+                    Console.WriteLine("BlueSnake moves to the left");
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.W)
                 {
                     Settings.directionBlueSnake = Directions.Up;
+                    Console.WriteLine("BlueSnake moves to the upside");
                 }
                 else if (currentKeyPressedMainGamePage == (int)Keys.S)
                 {
                     Settings.directionBlueSnake = Directions.Down;
+                    Console.WriteLine("BlueSnake moves to the downside");
                 }
                 movePlayer2();
             }
