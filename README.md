@@ -62,4 +62,4 @@ Diese Form-Klasse beeinhatet die ganze Gamelogik. Die „MainGameForm“ (Window
 	2h	Präsentation erstellen
 
 # Diskussion/Fazit
-Diesen Spiel alleine mit Multiplayermodus zu programmieren, hat mir am Meisten Spaß gemacht.
+Mein Fazit, warum ich den Multiplayermodus erstellt habe ist, mit diesem Spiel kann man Kontakt zu anderen Personen aufnehmen und das Soziale Verhalten wird damit befördert.
