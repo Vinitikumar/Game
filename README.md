@@ -52,7 +52,7 @@ Diese Form-Klasse beinhaltet die ganze Spiellogik. Die "MainGameForm" (Windows F
 
 # Console-Log-Data.txt
 	- Speichern der Console.WriteLine Output to Text File
-	- in MainGameForm()-Methode sind ist die Logik dazu befasst
+	- In MainGameForm()-Methode sind ist die Logik dazu befasst
 
 # Projektrisiken
     - Durch „TabControl" die tabs wechseln ohne die Wechseln it den „Keys" zu betätigen
