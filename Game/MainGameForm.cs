@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -33,6 +34,12 @@ namespace Game
             gameTimer.Start(); // Timer starten
 
             startGame(); // "startGame-Methode" ausführen
+            FileStream filestream = new FileStream("Console-Log-Data.txt", FileMode.Create);
+            var streamwriter = new StreamWriter(filestream);
+            streamwriter.AutoFlush = true;
+            Console.SetOut(streamwriter);
+            Console.SetError(streamwriter);
+
         }
         private void startButton_Click_1(object sender, EventArgs e)
         {
@@ -43,13 +50,13 @@ namespace Game
         {
             startedSP = true;
             tabController.SelectedTab = SPAndMPGame; // nach klicken der "Singlepayer-Button" wird
-                                                // die "Singleplayer" Seite geöffnet
+                                                     // die "Singleplayer" Seite geöffnet
         }
         private void multiplayerButton_Click(object sender, EventArgs e)
         {
             startedMP = true;
             tabController.SelectedTab = SPAndMPGame; // nach klicken der "Multiplayer-Button" wird
-                                                     // die "Multiplayer" Seite geöffnet
+                                                    // die "Multiplayer" Seite geöffnet
         }
         private void helpButton_Click(object sender, EventArgs e)
         {
@@ -87,15 +94,20 @@ namespace Game
                     GreenSnake[i].Y * Settings.Height,
                     Settings.Width, Settings.Height
                     ));
-                    // Zeichnung des "foods"
+                    // Zeichnung des "food" = roter Punkt
                     canvas.FillEllipse(Brushes.Red,
                     new Rectangle(
                     food.X * Settings.Width,
                     food.Y * Settings.Height,
                     Settings.Width, Settings.Height
                     ));
-
-                    //canvas.DrawImage(Image.FromFile(@"C:\Users\ganeshekumar\git\Game\Game\Resources\pngwing.com.png"), new Point(food.X, food.Y));
+                    // food = hamImage
+                    //canvas.DrawImage(Image.FromFile(@"C:\Users\ganeshekumar\git\Game\Game\Resources\pngwing.com.png"),
+                    //new Rectangle(
+                    //food.X * Settings.Width,
+                    //food.Y * Settings.Height,
+                    //Settings.Width, Settings.Height
+                    //));
                 }
                 // wenn der Tab mit dem Multiplayermodus gewechselt wird
                 // wird der Snake2 sichtbar
@@ -185,7 +197,8 @@ namespace Game
                 ScoreLabelBlue.Visible = true;
             }
             ScoreCountBlue.Text = Settings.Player2Score.ToString();
-
+            Console.WriteLine("BlueSnake: " + ScoreCountBlue);
+            Console.WriteLine("GreenSnake: " + ScoreCountGreen);
 
             generateFood(); // Ausführen der Methode generateFood() 
         }
@@ -243,7 +256,7 @@ namespace Game
                         // wenn ja dann "food" fressen
                         if (GreenSnake[0].X == food.X && GreenSnake[0].Y == food.Y)
                         {
-                            eat();
+                            eat1();
                             Console.WriteLine("GreenSnake eats food");
                         }
                     }
@@ -342,7 +355,7 @@ namespace Game
             Random rnd = new Random(); // Erstellen einer neuen Zufallsklasse
             food = new Circle { X = rnd.Next(0, maxXpos), Y = rnd.Next(0, maxYpos) }; // Erstellen eines neuen "food" mit einem zufälligen X und Y
         }
-        private void eat()
+        private void eat1()
         {
             Circle body = new Circle
             {
@@ -387,6 +400,7 @@ namespace Game
             // jedes tick führt diese Methode aus
             if (Settings.GameOver == true)
             {
+
                 startedMP = true;
                 // wenn das Spiel vorbei ist und der Spieler die Eingabetaste drückt
                 // startGame()-Methode wird gestartet

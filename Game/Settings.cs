@@ -33,7 +33,7 @@ namespace Game
         {
             Width = 16; 
             Height = 16; 
-            Speed = 30;
+            Speed = 25;
             Player1Score = 00;
             Player2Score = 00;
             Points = 100; 
