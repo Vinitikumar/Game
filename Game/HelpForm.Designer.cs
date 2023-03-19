@@ -38,7 +38,7 @@
             this.InfoText.ForeColor = System.Drawing.Color.ForestGreen;
             this.InfoText.Location = new System.Drawing.Point(48, 32);
             this.InfoText.Name = "InfoText";
-            this.InfoText.Size = new System.Drawing.Size(133, 44);
+            this.InfoText.Size = new System.Drawing.Size(106, 35);
             this.InfoText.TabIndex = 2;
             this.InfoText.Text = "InfoText";
             // 
@@ -50,6 +50,7 @@
             this.ClientSize = new System.Drawing.Size(896, 607);
             this.Controls.Add(this.InfoText);
             this.Name = "HelpForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HelpForm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,0 +1,96 @@
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves downside
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the left
+GreenSnake moves to the upside
+GreenSnake moves to the upside
+GreenSnake moves to the upside
+GreenSnake moves to the upside
+GreenSnake moves to the upside
+GreenSnake moves to the upside
+GreenSnake moves to the upside
+GreenSnake moves to the upside
+GreenSnake moves to the right
+GreenSnake eats food
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+GreenSnake moves to the right
+Collision with border, GreenSnake
+Game over

@@ -87,7 +87,7 @@
             // 
             this.GameTitlePic.BackColor = System.Drawing.Color.Transparent;
             this.GameTitlePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GameTitlePic.Image = global::Game.Properties.Resources.logo3;
+            this.GameTitlePic.Image = global::Game.Properties.Resources.Logo;
             this.GameTitlePic.Location = new System.Drawing.Point(155, 118);
             this.GameTitlePic.Name = "GameTitlePic";
             this.GameTitlePic.Size = new System.Drawing.Size(886, 383);
@@ -318,7 +318,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartScreen";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabController.ResumeLayout(false);
             this.StartPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GameTitlePic)).EndInit();
