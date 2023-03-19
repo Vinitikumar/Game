@@ -22,8 +22,7 @@ Hinweis:
 ![image](https://user-images.githubusercontent.com/94457045/226040950-ae5c04e0-b715-406e-8e22-a664f6c2b8a2.png)
 ![image](https://user-images.githubusercontent.com/94457045/226041050-db943f57-2459-4ca3-9ef6-bbf89402aed3.png)
 
-# Anstatt 2 Struktogramme von Methoden 
-!2 UML-Diagramme von 2 verschiedenen Klassen
+# Anstatt 2 Struktogramme von Methoden 2 UML-Diagramme von 2 verschiedenen Klassen
 
 ![image](https://user-images.githubusercontent.com/94457045/226171316-07294758-f3c3-441e-b2b8-7856a6c1efd2.png)
 ![image](https://user-images.githubusercontent.com/94457045/226171624-23b781fa-56bb-4e75-863b-5d8def5f1b9f.png)
