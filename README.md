@@ -69,14 +69,9 @@ Mit der "tabController_KeyDown()"-Methode werden die Tabs entsprechend im Game g
 	- In der MainGameForm()-Methode ist die Logik dazu zu finden
 
 # Projektrisiken
-    - Durch „TabControl" die tabs wechseln ohne die Wechseln it den „Keys" zu betätigen
-    - Erstellung der „Singleplayer- und Multiplayermodus" mit WASD und Arrow Keys
-    - Nach Schinken Bild ("Ham Image") uploads anstatt roter Punkt für "food" -> system.outofmemoryexception 
-
-# Projektrisiken
     - Durch "TabControl" die Tabs wechseln, ohne die mit den "Keys" zu betätigen
     - Erstellung der „Singleplayer- und Multiplayermodus" mit WASD und Arrow Keys
-    - Nach "HamImage" Uploads anstatt roter Punkt für "food" -> system.outofmemoryexception (noch nicht gelöst)
+    - Nach "Ham Image" Uploads anstatt roter Punkt für "food" -> system.outofmemoryexception (noch nicht gelöst)
 
 # Vorgangsliste
 	- Skizze anfertigen für die Tab Screens
