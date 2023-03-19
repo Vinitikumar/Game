@@ -1,7 +1,7 @@
 ﻿# HAM Game („Snake Game")
 
 # Motivation
-Bei meiner Wahl der Entscheidung, welches Spiel ich nachbauen wollte, half mir der Rückblick, wie ich damals an einem alten NOKIA Smartphone, diesen "Snake Game" gespielt hatte. Welches durch viele verschiedene Iterationen im Laufe der Jahre ging, aber das Spiel ist immer noch eine Menge Spaß. Somit erstellte ich das "Snake Game" in Visual Studio mit der Windows Form Application Vorlage. Und kam, mit einer Freundin, auf den Namen „HAM" für das "Snake Game". "HAM" ist übersetzt auf Englisch Schinken, worauf ich mit meinen Klassenkameraden auf die Idee kam, anstatt einem roten Punkt, was die Schlange aufrisst, das Schinken zu nehmen. Dies wiederum ein Zusatz ist. Ebenfalls hab ich mich für eine Multiplayer-Modus entschieden zu programmieren, was der klassische "Snake Game" nicht hatte.
+Bei meiner Wahl der Entscheidung, welches Spiel ich nachbauen wollte, half mir der Rückblick, wie ich damals an einem alten NOKIA Smartphone, diesen "Snake Game" gespielt hatte. Welches durch viele verschiedene Iterationen im Laufe der Jahre ging, aber das Spiel ist immer noch eine Menge Spaß. Somit erstellte ich das "Snake Game" in Visual Studio mit der Windows Form Application Vorlage. Und kam, mit einer Freundin, auf den Namen „HAM" für das "Snake Game". "HAM" ist übersetzt auf Englisch Schinken, worauf ich mit meinen Klassenkameraden auf die Idee kam, anstatt einem roten Punkt, was die Schlange aufrisst, das Schinken zu nehmen. Dies ist wiederum ein Zusatz. Ebenfalls hab ich mich für eine Multiplayer-Modus entschieden zu programmieren, was der klassische "Snake Game" nicht hatte.
 
 # Projektstrukturplan
 Das Projekt besteht aus zwei "Windows Forms", einer "TabControl" und aus vielen Klassen, die dynamisch importiert oder aus dem Spiel entfernt werden können. Die objektorientierte Programmierung (OOP) erleichtert die Unterteilung durch die Klassen, sodass nicht alles in einer Datei codiert werden müsste. Die zwei "Windows Forms" sind "MainGameForm" und "HelpForm". Der "MainGameForm" enthält auch den "TabControl", der wiederum 3 Tabs sich beihaltet. Der erste Tab ist die Startseite ("StartPage") mit dem Startbutton, welches nach dem Klick auf das zweite Tab führt. Der zweite Tab ist die Spieler Auswahlseite ("PlayerChoicesPage"). Auf der Seite sind drei weitere Buttons zu sichten, mit dem du den Einzelspieler ("Singleplayer") oder den Multispieler ("Multiplayer") auswählen kannst, die dann zu dem dritten Tab führen. Der dritte Tab ist die Spielseite ("SPAndMPGame"), die sich durch den Spielermodus variiert. Ebenfalls ist es möglich das Spiel mit der "Enter-Key" erneut zu starten und mit der "esc-Key" von der Spielseite zur Auswahlseite zu wechseln. Der dritte Button, mit dem Namen "Help", welches dann eine erneute Form („HelpForm“) öffnet. Dieser Form beinhaltet die Anleitung zu dem Spiel, die vor dem Spiel gelesen werden sollte. 
@@ -12,7 +12,10 @@ Der Spieler1 oder Spieler2 führt die Schlange zum Futter "food". Dazu verwenden
 ![image](https://user-images.githubusercontent.com/94457045/226169784-6b076125-f821-4929-8a94-ce352bcff948.png)
 
 
-Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins der Logik des Spieles
+Hinweis: 
+	- Der Programmcode beeinhaltet Kommentare für ein besseres Verständins der Logik des Spieles 
+	- Schinken anstatt roten Punkt ist auskommentiert
+
 
 ![image](https://user-images.githubusercontent.com/94457045/226036395-4e8fd28f-a99f-48c4-b328-32b51fbac66d.png)
 ![image](https://user-images.githubusercontent.com/94457045/226037062-adf2e4c4-957d-4a05-9d2a-50f9d06313c2.png)
