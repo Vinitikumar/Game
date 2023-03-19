@@ -35,7 +35,7 @@ Klassen (.cs):
 Die Program-Klasse ist der Haupteinstiegspunkt für die Anwendung und startet mit der "main()-Methode" das Programm bzw. Applikation/ Anwendung.
 
 -> Circle.cs        
-Die "Circle"-Klasse wird verwendet, um den Kopf und Körper der Schlangen zu berechnen und die X- und Y-Position des Schlangenobjekts zu geben. Dafür wird eine INT-Instanz namens X und einen für Y erstellt. Die "Circle()-Methode" setzt dann X und Y auf 0 zurück.
+Die "Circle"-Klasse wird verwendet, um den Kopf und Körper der Schlangen zu berechnen und die X- und Y-Position des Schlangenobjekts zu geben. Dafür wird ein INT-Instanz namens X und einen für Y erstellt. Die "Circle()-Methode" setzt dann X und Y auf 0 zurück.
 
 -> Input.cs         
 Die "Input"-Klasse wird mit der Benutzereingabe verknüpft, zum Beispiel mit oben, unten, links oder rechts. Eine neue Instanz der "Hashtable"-Klasse wurde erstellt, um darin die eingefügten "keys" zu verwenden. Die "KeyPress()-Methode" enthält die Funktion, die einen "key" der Klasse zurückgibt. Demnach durchläuft eine If-Anweisung, wenn der "Hashtable" leer ist, der den Booleanwert "false" und wenn nicht "true" zurückgibt. Eine weitere verwendete Methode in der "Input-Klasse" ist die "changeState()-Methode", die die Funktion hat, den Zustand der "keys" und den Spielern zu ändern.
