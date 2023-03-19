@@ -11,7 +11,7 @@ Der Spieler1 oder Spieler2 führt die Schlange zum Futter "food". Dazu verwenden
 
 	Spieler1: GreenSnake
 	Spieler2: BlueSnake
-	Food: Ham
+	Food: Roter Punkt/ Ham
 
 
 Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins der Logik des Spieles
@@ -24,7 +24,7 @@ Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins 
 ![image](https://user-images.githubusercontent.com/94457045/226041050-db943f57-2459-4ca3-9ef6-bbf89402aed3.png)
 
 	
-# Anstatt 2 Struktogramme von Methoden -> 2 UML-Diagramme von 2 Klassen
+# Anstatt 2 Struktogramme von Methoden -> 1 UML-Diagramme von einer Klasse und 1 Struktogramm von einer Methode der gleichen Klasse
 
 
 
@@ -62,10 +62,10 @@ Diese Form-Klasse beinhaltet die ganze Spiellogik. Die "MainGameForm" (Windows F
 	- Backend programmiert
 	- Singleplayer- und Multiplayermodus
 	- Name für das Spiel erfunden und logo erstellt
-	- Windowsforms gestaltet (Ui)
+	- Windowsforms gestaltet
 
 # Zeitplan (Milestones)
-	30min	2 UML-Diagramme erstellen
+	30min	1 UML-Diagramme von einer Klasse und 1 Struktogramm von einer Methode der gleichen Klasse
 	20h	Coden
 	4h	Dokumentation erstellen
 	2h	Präsentation erstellen
