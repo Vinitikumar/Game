@@ -1,4 +1,4 @@
-﻿# HAM Game („Snake Game")
+﻿# HAM Game ("Snake Game- Project") by Vinita Ganeshekumar
 
 # Motivation
 Bei meiner Wahl der Entscheidung, welches Spiel ich nachbauen wollte, half mir der Rückblick, wie ich damals an einem alten NOKIA Handy, dieses "Snake Game" gespielt habe. Welches durch viele verschiedene Iterationen im Laufe der Jahre ging, aber das Spiel ist immer noch eine Menge Spaß. Somit erstellte ich das "Snake Game" in Visual Studio mit der Windows Form Applikation Vorlage. Und kam, mit einer Freundin, auf den Namen "HAM" für das "Snake Game". "HAM" ist Englisch für das deutsche Wort Schinken, worauf ich mit meinen Klassenkameraden auf die Idee kam, anstatt einem roten Punkt, was die Schlange auffrisst, das Schinken zu nehmen. Dies ist wiederum ein Zusatz in dem Spiel ist. Ebenfalls habe ich mich für eine Multiplayer-Modus entschieden zu programmieren, was der klassische "Snake Game" nicht hatte.
