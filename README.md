@@ -9,7 +9,7 @@ Das Projekt besteht aus zwei "Windows Forms", einer "TabControl" und aus vielen 
 Ziel des Spieles:
 Der Spieler1 oder Spieler2 führt die Schlange zum Futter "food". Dazu verwenden die Spieler die Pfeiltasten "Arrow keys" oder "WASD keys" auf der Tatstatur. Wird der Happen berührt so verschwindet er, die Schlangen werden um einen Körperteil länger und irgendwo auf dem Spielplan erscheint ein neuer Futterhappen.
 
-![image](https://user-images.githubusercontent.com/94457045/226169621-b8339555-b59c-4f0d-b412-0c98b5bb1d0d.png)
+![image](https://user-images.githubusercontent.com/94457045/226169784-6b076125-f821-4929-8a94-ce352bcff948.png)
 
 
 Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins der Logik des Spieles
