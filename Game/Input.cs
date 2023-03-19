@@ -12,7 +12,7 @@ namespace Game
     {
         private static Hashtable keyTable = new Hashtable();
         // Erstellung einer neue Instanz der Hashtable-Klasse
-        // diese Klasse wird verwendet, um die darin eingefügten "Keys" zu optimieren
+        // Verwendung der darin eingefügten "Keys" 
         public static bool keyPress(Keys key)
         {
             // diese Funktion gibt einen Schlüssel zurück zur Klasse

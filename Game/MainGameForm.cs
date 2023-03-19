@@ -29,11 +29,11 @@ namespace Game
             new Settings(); // Verknüpfung der "Settings"-Klasse mit dem Form
 
             gameTimer.Interval = 1500 / Settings.Speed; // ändern der Spielzeit auf "Settings-Klasse" mit dem Form
-            gameTimer.Tick += updateScreenSPMP; // Verknüpfung einer "updateScreenSPMP-Funkton" mit dem Timer
+            gameTimer.Tick += updateScreenSPMP; // Verknüpfung einer "updateScreenSPMP()-Methode" mit dem Timer
             gameTimer.Tick += updateScreenSP;
             gameTimer.Start(); // Timer starten
 
-            startGame(); // "startGame-Methode" ausführen
+            startGame(); // "startGame()-Methode" ausführen
             FileStream filestream = new FileStream("Console-Log-Data.txt", FileMode.Create);
             var streamwriter = new StreamWriter(filestream);
             streamwriter.AutoFlush = true;
@@ -101,7 +101,9 @@ namespace Game
                     food.Y * Settings.Height,
                     Settings.Width, Settings.Height
                     ));
+
                     // food = hamImage
+
                     //canvas.DrawImage(Image.FromFile(@"C:\Users\ganeshekumar\git\Game\Game\Resources\pngwing.com.png"),
                     //new Rectangle(
                     //food.X * Settings.Width,
@@ -165,7 +167,7 @@ namespace Game
         // dies ist die Methode zum Starten des Spiels
         private void startGame()
         {
-            GameOverText.Visible = false; // Game over text auf „invisible" setzten
+            GameOverText.Visible = false; // Game over text auf "invisible" setzten
             RestartGameText.Visible = false;
             FinalScoreGreenSnakeText.Visible = false;
             FinalScoreBlueSnakeText.Visible = false;

@@ -17,7 +17,7 @@ namespace Game
     };
     class Settings
     {
-        // Klassen werden gesetzt
+        // Instanzen werden gesetzt
         public static int Width { get; set; } 
         public static int Height { get; set; }
         public static int Speed { get; set; } 
