@@ -23,7 +23,8 @@ Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins 
 
 	
 # Anstatt 2 Struktogramme von Methoden 
--> 2 UML-Diagramme von 2 verschiedenen Klassen
+!2 UML-Diagramme von 2 verschiedenen Klassen
+
 ![image](https://user-images.githubusercontent.com/94457045/226171316-07294758-f3c3-441e-b2b8-7856a6c1efd2.png)
 ![image](https://user-images.githubusercontent.com/94457045/226171624-23b781fa-56bb-4e75-863b-5d8def5f1b9f.png)
 
