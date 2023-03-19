@@ -8,8 +8,8 @@ namespace Game
 {
     class Circle
     {
-        public int X { get; set; } // dies ist eine public int-Klasse namens x
-        public int Y { get; set; } // dies ist eine public int-Klasse namens y
+        public int X { get; set; } 
+        public int Y { get; set; } 
 
         public Circle()
         {
