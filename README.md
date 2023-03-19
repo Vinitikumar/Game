@@ -4,7 +4,12 @@
 Bei meiner Wahl der Entscheidung, welches Spiel ich nachbauen würde, half mir der Rückblick wie ich damals an einem alten NOKIA Smartphone, diesen „Snake Game" gespielt hatte. Welches durch viele verschiedene Iterationen im Laufe der Jahre ging, aber das Spiel ist immer noch eine Menge Spaß. Somit erstellte ich das CSnake Game" in Visual Studio mit der Windows Form Application Vorlage. Und kam auf den Namen „HAM" für das „Snake Game". „HAM" übersetzt auf Englisch heißt Schinken, worauf ich mit meinen Klassenkameraden auf die Idee kam, anstatt einem normalen obst, was die Schlange fressen würde, das Schinken zu nehmen. Ebenfalls hab ich mich für eine Multiplayermodus entschieden, was der klassische „SnakeGame" nicht hatte.
 
 # Projektstrukturplan
-Das Projekt besteht aus zwei Windows Formen, einer „TabControl“ und aus vielen Klassen, die dynamisch importiert oder aus dem Spiel entfernt werden können. Durch die Klassen ist die Programmierung einfacher zu unterteilen, so dass wir nicht alles in einer Datei codieren müssen. Die zwei Windows Formen sind „MainGameForm“ und „HelpForm“. Der „MainGameForm“ enthält auch den „TabControl“, der wiederum mit 3 Tabs sich befasst. Der erste Tab ist die Startseite mit dem Startbutton. Der zweite Tab ist die Spieler Auswahlseite, die durch das Drücken der Startbutton gewechselt wird. Auf der Seite sind zwei weiter Buttons, mit dem du den Einzelspieler oder Multispieler auswählen kannst, die dann zu dem dritten Tab führt. Die dritten Tabs ist die Spielseite, die sich durch den Spielermodus variiert. Ebenfalls ist es möglich das Spiel mit der "Enter-Key" erneut zu starten und mit der „esc-Key" ist es möglich vom GameTab zur Auswahlseite zu wechseln. Auf der Auswahlseite gibt es ein weiterer Button namens „Help“, welches dann eine erneute Form („HelpForm“) öffnet. Dieser Form beinhaltet die Anleitung zu dem Spiel, die vor dem Spiel gelesen werden sollte. 
+Das Projekt besteht aus zwei Windows Formen, einer „TabControl“ und aus vielen Klassen, die dynamisch importiert oder aus dem Spiel entfernt werden können. Durch die Klassen ist die Programmierung einfacher zu unterteilen, so dass wir nicht alles in einer Datei codieren müssen. Die zwei Windows Formen sind „MainGameForm“ und „HelpForm“. Der „MainGameForm“ enthält auch den „TabControl“, der wiederum mit 3 Tabs sich befasst. Der erste Tab ist die Startseite mit dem Startbutton. Der zweite Tab ist die Spieler Auswahlseite, die durch das Drücken der Startbutton gewechselt wird. Auf der Seite sind zwei weiter Buttons, mit dem du den Einzelspieler ("Singleplayer") oder Multispieler ("Multiplayer") auswählen kannst, die dann zu dem dritten Tab führt. Die dritten Tabs ist die Spielseite, die sich durch den Spielermodus variiert. Ebenfalls ist es möglich das Spiel mit der "Enter-Key" erneut zu starten und mit der „esc-Key" ist es möglich vom GameTab zur Auswahlseite zu wechseln. Auf der Auswahlseite gibt es ein weiterer Button namens „Help“, welches dann eine erneute Form („HelpForm“) öffnet. Dieser Form beinhaltet die Anleitung zu dem Spiel, die vor dem Spiel gelesen werden sollte. 
+
+Player1: GreenSnake
+Player2: BlueSnake
+Food: Ham
+
 
 Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins
 
@@ -46,14 +51,14 @@ Diese Form-Klasse beeinhatet die ganze Gamelogik. Die „MainGameForm“ (Window
 # Vorgangsliste
 	- Skizze anfertigen für die Screens
 	- Überlegung Konsolen- oder Gui-basierend programmieren
-	- Entschieden zu Objektorientierte Programmierung (OOP)
+	- Plannung Objektorientierte Programmierung (OOP)
 	- Windowsforms erstellt
 	- Ereignisse erstellt
 	- Klassen erstellt
 	- Backend programmiert
 	- Singleplayer- und Multiplayermodus
 	- Name für das Spiel erfunden und logo erstellt
-	- Windowsforms gestaltet
+	- Windowsforms gestaltet (Ui)
 
 # Zeitplan (Milestones)
 	30min	2 UML-Diagramme erstellen
