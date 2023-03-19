@@ -94,11 +94,14 @@ namespace Game
                     food.Y * Settings.Height,
                     Settings.Width, Settings.Height
                     ));
+
+                    //canvas.DrawImage(Image.FromFile(@"C:\Users\ganeshekumar\git\Game\Game\Resources\pngwing.com.png"), new Point(food.X, food.Y));
                 }
                 // wenn der Tab mit dem Multiplayermodus gewechselt wird
                 // wird der Snake2 sichtbar
                 if (startedMP)
                 {
+                    
                     for (int i = 0; i < BlueSnake.Count; i++)
                     {
                         if (i == 0)
@@ -120,6 +123,8 @@ namespace Game
             }
             else
             {
+                currentKeyPressedMainGamePage = -1;
+
                 // dieser Teil wird ausgeführt, wenn das spiel zu Ende ist
                 string gameOver = "Game Over!";
                 string finalScoreGreenSnake = "Final Score" + "\nGreenSnake: " + Settings.Player1Score;
@@ -347,7 +352,7 @@ namespace Game
 
             GreenSnake.Add(body);
 
-            Settings.Speed++; // Hinzufügen des Teils zum Schlangen-Array
+            Settings.Speed += Settings.Speed; // Hinzufügen des Teils zum Schlangen-Array
             Settings.Player1Score += Settings.Points; // den Punktestand für das Spiel erhöhen
             ScoreCountGreen.Text = Settings.Player1Score.ToString(); // zeigt den Punktestand auf dem "ScoreCountGreen label"
             generateFood(); // die Methode generateFood()
@@ -365,7 +370,7 @@ namespace Game
 
             BlueSnake.Add(body2);
 
-            Settings.Speed++;
+            Settings.Speed += Settings.Speed;
             Settings.Player2Score += Settings.Points;
             ScoreCountBlue.Text = Settings.Player2Score.ToString();
             generateFood();
@@ -382,6 +387,7 @@ namespace Game
             // jedes tick führt diese Methode aus
             if (Settings.GameOver == true)
             {
+                startedMP = true;
                 // wenn das Spiel vorbei ist und der Spieler die Eingabetaste drückt
                 // startGame()-Methode wird gestartet
                 if (currentKeyPressedMainGamePage == (int)Keys.Enter)
@@ -436,6 +442,7 @@ namespace Game
         {
             if (startedSP)
             {
+                BlueSnake.Clear();
                 ScoreLabelBlue.Visible = false;
                 ScoreCountBlue.Visible = false;
                 FinalScoreBlueSnakeText.Visible = false;
@@ -488,15 +495,15 @@ namespace Game
             // ansonsten werden die Keys deaktiviert
             if (startedSP)
             {
-                updateScreenSPMP(sender, e);
+                //updateScreenSPMP(sender, e);
                 currentKeyPressedMainGamePage = e.KeyValue;
             }
             // wenn Multiplayermodus dann werden die "Arrow keys" und "WASD keys" für den zwei Spieler aktiviert
             // ansonsten werden die Keys deaktiviert
             else if (startedMP)
             {
-                updateScreenSPMP(sender, e);
-                updateScreenSP(sender, e);
+                //updateScreenSPMP(sender, e);
+                //updateScreenSP(sender, e);
                 currentKeyPressedMainGamePage = e.KeyValue;
 
             }

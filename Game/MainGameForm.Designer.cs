@@ -315,6 +315,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1224, 856);
             this.Name = "MainGameForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartScreen";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.tabController.ResumeLayout(false);
