@@ -30,6 +30,7 @@ Hinweis:
 # Beschreibung der Funktionalität
 
 Klassen (.cs):
+
 -> Program.cs       
 Die Program-Klasse ist der Haupteinstiegspunkt für die Anwendung und startet mit der "main()-Methode" das Programm bzw. Applikation/ Anwendung.
 
@@ -45,14 +46,22 @@ Die "Settings-Klasse" wird verwendet, um die Höhe, Breite, Geschwindigkeit und 
 -> MainGameForm.cs      
 Diese Form-Klasse beinhaltet die ganze Spiellogik. Die "MainGameForm" (Windows Form) erstellte die "MainGameForm"-Klasse. In der wird zuerst zwei Listen-Arrays für die zwei Schlangen („BlueSnake“ und „GreenSnake“) erstellt. Ebenfalls eine einzelne "Circle-Klasse" namens "food", eine variable "CurrentKeyPressedMainGamePage" mit dem Datentyp INT, zwei boolean Variablen "startedMP" und "startedSP" mit dem Wert "false", erstellt. 
 Die "MainGameForm"()-Methode ist die Hauptmethode und verknüpft die "Settings"-Klasse mit der Form. Die Methode ändert die Spielzeit passend zu der "Settings speed" und verknüpft die "updateScreenSPMP()"- und "updateScreenSP()"-Methoden mit dem "GameTimer". In der "MainGameForm()"-Methode wird der "GameTimer" gestartet und die "startGame()"-Methode ausgeführt. 
+
 Dann kommen die "Button-Methoden" ("Start-", "Singleplayer-", "Multiplayer-" und "Help-Button"). Alle Buttons führen von einem Tab zu anderem Tab, außer die "Help-Button", sie führt zu der "HelpForm" (Windows Form). 
+
 Die "updateScreenSPMP-" und "updateScreenSP"-Methoden, werden mit dem "GameTimer-Objekt" verknüpft. Die Funktion der beiden Methoden ist, falls zuerst überprüft wird, ob das Spiel vorbei ist, wird der Spieler1 oder Spieler2, die Eingabetaste drücken, um das Spiel neu zu starten. Wenn das Spiel jedoch noch nicht vorbei ist, wird zuerst der Eingang der Spieler1 oder Spieler2 nach oben, unten, links und rechts überprüft. Später wird die definierte "movePlayer()"-Methode ausgeführt und dann die Funktion "pbCanvas.inalidate" (die "pictureBox") aufgerufen. Diese Funktion ermöglicht es, den "pictureBox" in Millisekunden zu aktualisieren, sodass es aussieht, als ob sich die Schlange im Spielbereich bewegt. Wenn diese Funktion nicht verwendet wird, dann hinterlässt die Schlange eine Spur von Punkten, wo sie sich bewegt. Auf diese Weise werden alle nicht verwendeten "graphics" durch die Bewegungen der Schlange entfernt.
+
 Die Methode "updateGraphics()", dass aus dem Ereignis "updateGraphics", der durch Option "Paint" für den "PictureBox" hinzugefügt wurde. Dieser dient dazu, alle Grafiken hier zu zeichnen und ebenfalls aus dem "pictureBox" zu entfernen. Deshalb wird die Funktion "pbCanvas.Invalidate()" im "GameTimer"-Ereignis verwendet. 
 Auf dieser Weise wird der Eindruck erweckt, dass der Spieler die Schlange im Spiel fließend bewegt. In der Methode werden zugleich die Farben für Kopf, Körper und Futter eingestellt und festgelegt. Ebenfalls wird überprüft, was passieren könnte, wenn das Spiel vorbei ist. Wenn das Spiel zu Ende ist, wird auf dem Bildschirm die erforderlichen Informationen angezeigt. 
+
 Die Methode "startGame()" wird ausgeführt, wenn das Spiel tatsächlich startet. Dafür wurde der Standardwert für das Spiel gesetzt, wie das Einrichten des Schlangenkopfes und das Hinzufügen zu dem Array.  Zugleich wird die Sichtbarkeit der "ScoreCounts" und "ScoreLabels" zu den jeweiligen schlangen ("BlueSnake" oder "GreenSnake") gesetzt.
+
 Die Methode "generateFood()" erzeugt das "food icon" an einer zufälligen Stelle im Spielbereich. 
+
 Wenn die Schlange mit dem Futter kollidiert, wird die "eat()"-Methode ausgelöst. Zugleich wird auch ein anderer Sektor zum Körper der Schlange und der Schlangen-Array hinzugefügt. 
+
 Die "die()"-Methode betätigt, was ihr Name besagt, sie wird das Spiel beenden, wenn sie ausgeführt wird. Normalerweise, wenn die Schlange entweder die Grenzen trifft oder mit den Körperteilen der Schlange kollidiert, wird das Spiel beendet. 
+
 Mit der "tabController_KeyDown()"-Methode werden die Tabs entsprechend im Game gewechselt, wie zum Beispiel in Einzelspielermodus oder Mehrspielermodus. Ebenfalls aktiviert diese Methode die Keys nur auf dem Tab, wo das Spiel mit den unterschiedlichen Spielermodus sich befindet. Im Ganzem werden die Methoden "MainGameForm()", "startButton_Click_1()", "singlePlayerButton_Click()", "multiplayerButton_Click()", "helpButton_Click()", "updateGraphics()", "startGame()", "movePlayer1()", "movePlayer2()", "generateFood()", "eat()", "eat2()", "die()", "updateScreenSPMP()", "updateScreenSP()" und "tabController_KeyDown()" in der "Form"-Klasse verwendet.
 
 # Console-Log-Data.txt
