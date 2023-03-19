@@ -22,7 +22,8 @@ Hinweis: Der Programmcode beeinhaltet Kommentare für ein besseres Verständins 
 ![image](https://user-images.githubusercontent.com/94457045/226041050-db943f57-2459-4ca3-9ef6-bbf89402aed3.png)
 
 	
-# Anstatt 2 Struktogramme von Methoden -> 1 UML-Diagramme von einer Klasse und 1 Struktogramm von einer Methode der gleichen Klasse
+# Anstatt 2 Struktogramme von Methoden 
+-> 1 UML-Diagramme von einer Klasse und 1 Struktogramm von einer Methode der gleichen Klasse
 
 
 
