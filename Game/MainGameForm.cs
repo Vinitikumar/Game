@@ -95,21 +95,21 @@ namespace Game
                     Settings.Width, Settings.Height
                     ));
                     // Zeichnung des "food" = roter Punkt
-                    canvas.FillEllipse(Brushes.Red,
-                    new Rectangle(
-                    food.X * Settings.Width,
-                    food.Y * Settings.Height,
-                    Settings.Width, Settings.Height
-                    ));
-
-                    // food = hamImage
-
-                    //canvas.DrawImage(Image.FromFile(@"C:\Users\ganeshekumar\git\Game\Game\Resources\pngwing.com.png"),
+                    //canvas.FillEllipse(Brushes.Red,
                     //new Rectangle(
                     //food.X * Settings.Width,
                     //food.Y * Settings.Height,
                     //Settings.Width, Settings.Height
                     //));
+
+                    // food = hamImage
+
+                    canvas.DrawImage(Image.FromFile(@"C:\Users\ganeshekumar\git\Game\Game\Resources\ham.png"),
+                    new Rectangle(
+                    food.X * Settings.Width,
+                    food.Y * Settings.Height,
+                    Settings.Width, Settings.Height
+                    ));
                 }
                 // wenn der Tab mit dem Multiplayermodus gewechselt wird
                 // wird der Snake2 sichtbar
